@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  backend:
+    build: 
+      context: ./backend
+    container_name: ai-resume-backend
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    restart: always
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        # Since we use Nginx proxy pass, the backend URL is just path relative to domain
+        - VITE_BACKEND_URL=/api/
+        - VITE_CLERK_PUBLISHABLE_KEY=${VITE_CLERK_PUBLISHABLE_KEY}
+    container_name: ai-resume-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always
