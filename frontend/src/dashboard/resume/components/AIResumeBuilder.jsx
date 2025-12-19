@@ -1,4 +1,5 @@
 import React, { useState, useContext, useRef, useEffect } from 'react'
+import ReactMarkdown from 'react-markdown'
 import {
     Dialog,
     DialogContent,
@@ -59,8 +60,8 @@ function TemplateCard({ template, onSelect, isSelected }) {
             <div className={`relative w-full h-64 transition-transform duration-500 transform-style-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
                 {/* Front - Template Info */}
                 <div className={`absolute inset-0 w-full h-full backface-hidden rounded-xl border-2 p-5 flex flex-col items-center justify-center transition-all ${isSelected
-                        ? 'border-purple-500 shadow-lg shadow-purple-500/30 bg-purple-50'
-                        : 'border-gray-200 hover:border-gray-300 bg-white'
+                    ? 'border-purple-500 shadow-lg shadow-purple-500/30 bg-purple-50'
+                    : 'border-gray-200 hover:border-gray-300 bg-white'
                     }`}>
                     <div className="text-5xl mb-3">{template.emoji}</div>
                     <h3 className="text-lg font-bold text-gray-800">{template.name}</h3>
@@ -470,10 +471,30 @@ Hãy trả lời phù hợp. Nhớ: CHI TIẾT, động viên, gợi ý cách vi
                             {messages.map((msg, index) => (
                                 <div key={index} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                                     <div className={`max-w-[85%] p-3 rounded-2xl text-sm leading-relaxed shadow-sm ${msg.role === 'user'
-                                            ? 'bg-gradient-to-br from-violet-500 to-purple-600 text-white rounded-br-md'
-                                            : 'bg-white border border-gray-200 rounded-bl-md'
+                                        ? 'bg-gradient-to-br from-violet-500 to-purple-600 text-white rounded-br-md'
+                                        : 'bg-white border border-gray-200 rounded-bl-md'
                                         }`}>
-                                        <div className="whitespace-pre-wrap">{msg.content}</div>
+                                        <div className="text-sm">
+                                            {msg.role === 'user' ? (
+                                                <div className="whitespace-pre-wrap">{msg.content}</div>
+                                            ) : (
+                                                <ReactMarkdown
+                                                    components={{
+                                                        p: ({ node, ...props }) => <p className="mb-2 last:mb-0" {...props} />,
+                                                        ul: ({ node, ...props }) => <ul className="list-disc pl-4 mb-2 space-y-1" {...props} />,
+                                                        ol: ({ node, ...props }) => <ol className="list-decimal pl-4 mb-2 space-y-1" {...props} />,
+                                                        li: ({ node, ...props }) => <li className="mb-1" {...props} />,
+                                                        strong: ({ node, ...props }) => <span className="font-bold text-purple-900" {...props} />,
+                                                        h1: ({ node, ...props }) => <h1 className="text-lg font-bold mb-2" {...props} />,
+                                                        h2: ({ node, ...props }) => <h2 className="text-base font-bold mb-2" {...props} />,
+                                                        h3: ({ node, ...props }) => <h3 className="text-sm font-bold mb-2" {...props} />,
+                                                        blockquote: ({ node, ...props }) => <blockquote className="border-l-4 border-purple-500 pl-4 py-1 my-2 bg-purple-50 rounded text-gray-700 italic" {...props} />,
+                                                    }}
+                                                >
+                                                    {msg.content}
+                                                </ReactMarkdown>
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
                             ))}

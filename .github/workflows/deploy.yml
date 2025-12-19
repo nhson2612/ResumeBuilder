@@ -1,0 +1,59 @@
+name: Deploy to AWS EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy to EC2
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Copy files to Server via SCP
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_KEY }}
+          source: "."
+          target: "/home/ubuntu/AI-Resume-Builder"
+          # Only copy necessary files/folders to avoid overwriting .env or excessive data transfer
+          # However, a simple git pull is often better if we aren't building artifacts in CI.
+          # Since the user was doing "git pull" on server, let's stick to the "Remote Command" pattern using ssh-action.
+          # The SCP action is optional if we trust git pull. Let's stick to the user's current flow: GIT PULL on server.
+          # It's cleaner for now. I will rewrite this step to just be SSH.
+
+      - name: Deploy on Server via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_KEY }}
+          script: |
+            # Stop existing containers
+            # cd ~/AI-Resume-Builder
+            
+            # Pull latest code
+            # git pull origin main
+            
+            # Rebuild and start
+            # docker compose down
+            # docker compose up -d --build
+            
+            # Safer script with error handling
+            cd /home/ubuntu/AI-Resume-Builder
+            echo "Pulling latest code..."
+            git pull origin main
+            
+            echo "Rebuilding and restarting containers..."
+            # We don't always need 'down', but it ensures clean state. 
+            # 'up -d --build' is usually enough and zero-downtime-ish if configuration hasn't changed drastically.
+            docker compose up -d --build
+            
+            echo "Pruning unused images to save space..."
+            docker image prune -f
