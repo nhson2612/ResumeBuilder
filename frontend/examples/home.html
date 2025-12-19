@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Trang Chủ AI Resume Builder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "primary-dark": "#0e46b5",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #135bec 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111318] dark:text-white overflow-x-hidden">
+    <!-- Top Navigation -->
+    <header
+        class="sticky top-0 z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <div class="flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 text-primary">
+                        <span class="material-symbols-outlined text-xl">description</span>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">AI Resume</span>
+                </div>
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex gap-8">
+                    <a class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-white transition-colors"
+                        href="#">Trang chủ</a>
+                    <a class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-white transition-colors"
+                        href="#">Tính năng</a>
+                    <a class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-white transition-colors"
+                        href="#">Bảng giá</a>
+                </nav>
+                <!-- Action Buttons -->
+                <div class="flex items-center gap-4">
+                    <a class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-white transition-colors hidden sm:block"
+                        href="#">Đăng nhập</a>
+                    <button
+                        class="bg-primary hover:bg-primary-dark text-white px-5 py-2 rounded-lg text-sm font-bold transition-all shadow-lg shadow-primary/20">
+                        Tạo CV
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative pt-12 pb-20 lg:pt-24 lg:pb-28 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                    <!-- Hero Content -->
+                    <div class="flex-1 text-center lg:text-left">
+                        <!-- Chip -->
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-100 dark:border-indigo-800 mb-6">
+                            <span class="flex h-2 w-2 rounded-full bg-indigo-500"></span>
+                            <span
+                                class="text-xs font-semibold text-indigo-600 dark:text-indigo-300 uppercase tracking-wide">✨
+                                Tính năng AI mới có sẵn</span>
+                        </div>
+                        <h1
+                            class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-gray-900 dark:text-white mb-6 leading-tight">
+                            Xây dựng Hồ Sơ <br />Của Bạn <span class="gradient-text">Với AI</span>
+                        </h1>
+                        <p
+                            class="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            Dễ dàng tạo nên một hồ sơ ấn tượng với Trình tạo CV sử dụng công nghệ AI tiên tiến của chúng
+                            tôi. Tối ưu hóa cơ hội việc làm của bạn ngay hôm nay.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <button
+                                class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-xl text-base font-bold transition-all shadow-xl shadow-primary/25">
+                                Bắt đầu ngay
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </button>
+                            <button
+                                class="inline-flex items-center justify-center gap-2 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 px-8 py-3.5 rounded-xl text-base font-bold transition-all">
+                                <span class="material-symbols-outlined filled text-red-500">play_circle</span>
+                                Xem Video
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Hero Image -->
+                    <div class="flex-1 w-full max-w-[600px] lg:max-w-none">
+                        <div
+                            class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 aspect-[4/3] group">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10">
+                            </div>
+                            <div class="w-full h-full bg-cover bg-center"
+                                data-alt="Professional resume on a sleek laptop screen"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCPSd025jWjYodM7lBn_97mH7AUUnqYiKbUmkswmKWq7m00KiS7e1oNjO5WsqZb1E2tWUHUvuiFpP2r-trboIylb_wYx5ufS4cV4bYZhz-dG-0wqJ1C3GzLHHsbHoWSe-QXQi2phPFCiiADKaTobfI2MSuVxag99J8tm7TkH2egjG5IreT3_qiGI0Ptahhv7GNO4DC1TnShNnFQjC338FW-crD0_LMX8YTpstrxP2TFxlpmGUODr_OeKmlFfbRlqrlLeU78-IdHE8E");'>
+                            </div>
+                            <!-- Floating UI Element decoration -->
+                            <div
+                                class="absolute bottom-6 left-6 right-6 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 flex items-center gap-4 animate-[bounce_3s_infinite]">
+                                <div
+                                    class="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                                    <span class="material-symbols-outlined">check_circle</span>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-gray-900 dark:text-white">Hồ sơ đã được tối ưu</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Sẵn sàng ứng tuyển ngay</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Abstract Background Decorations -->
+            <div
+                class="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl -z-10">
+            </div>
+            <div
+                class="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl -z-10">
+            </div>
+        </section>
+        <!-- Stats Section -->
+        <section class="py-10 border-y border-gray-100 dark:border-gray-800 bg-white dark:bg-background-dark">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="flex flex-col items-center justify-center text-center p-4">
+                        <span class="text-3xl font-black text-gray-900 dark:text-white mb-1">10,000+</span>
+                        <span class="text-sm font-medium text-gray-500 dark:text-gray-400">CV đã tạo</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center justify-center text-center p-4 border-l border-gray-100 dark:border-gray-800">
+                        <span class="text-3xl font-black text-gray-900 dark:text-white mb-1">95%</span>
+                        <span class="text-sm font-medium text-gray-500 dark:text-gray-400">Tỷ lệ thành công</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center justify-center text-center p-4 border-l border-gray-100 dark:border-gray-800">
+                        <span class="text-3xl font-black text-gray-900 dark:text-white mb-1">500+</span>
+                        <span class="text-sm font-medium text-gray-500 dark:text-gray-400">Người dùng/ngày</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center justify-center text-center p-4 border-l border-gray-100 dark:border-gray-800">
+                        <span class="text-3xl font-black text-gray-900 dark:text-white mb-1">24/7</span>
+                        <span class="text-sm font-medium text-gray-500 dark:text-gray-400">Hỗ trợ trực tuyến</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Features Section -->
+        <section class="py-20 lg:py-28 bg-gray-50 dark:bg-[#0d121c]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-base font-bold text-primary uppercase tracking-wider mb-3">Tính năng nổi bật</h2>
+                    <h3 class="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-6">Cách hoạt động?</h3>
+                    <p class="text-lg text-gray-600 dark:text-gray-400">Quy trình đơn giản, hiệu quả tối đa. Tham gia
+                        cùng hàng ngàn ứng viên thành công.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div
+                        class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all hover:-translate-y-1 group">
+                        <div
+                            class="w-14 h-14 bg-blue-50 dark:bg-blue-900/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
+                            <span class="material-symbols-outlined text-3xl">magic_button</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-3">AI Tạo CV</h4>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                            Công nghệ AI tự động viết và tối ưu nội dung CV của bạn dựa trên kinh nghiệm và kỹ năng, đảm
+                            bảo chuyên nghiệp và thu hút.
+                        </p>
+                        <a class="inline-flex items-center text-primary font-bold hover:gap-2 transition-all" href="#">
+                            Tạo ngay <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                        </a>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div
+                        class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all hover:-translate-y-1 group">
+                        <div
+                            class="w-14 h-14 bg-purple-50 dark:bg-purple-900/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-600 group-hover:text-white transition-colors text-purple-600">
+                            <span class="material-symbols-outlined text-3xl">video_chat</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Phỏng vấn thử với AI</h4>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                            Luyện tập trả lời phỏng vấn với AI Bot thông minh. Nhận phản hồi chi tiết về nội dung, ngữ
+                            điệu và ngôn ngữ cơ thể.
+                        </p>
+                        <a class="inline-flex items-center text-purple-600 font-bold hover:gap-2 transition-all"
+                            href="#">
+                            Thử ngay <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                        </a>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div
+                        class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all hover:-translate-y-1 group">
+                        <div
+                            class="w-14 h-14 bg-green-50 dark:bg-green-900/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-green-600 group-hover:text-white transition-colors text-green-600">
+                            <span class="material-symbols-outlined text-3xl">work</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Tìm việc làm</h4>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                            Hệ thống tự động kết nối hồ sơ của bạn với hàng ngàn nhà tuyển dụng phù hợp, giúp bạn tìm
+                            được công việc mơ ước nhanh hơn.
+                        </p>
+                        <a class="inline-flex items-center text-green-600 font-bold hover:gap-2 transition-all"
+                            href="#">
+                            Tìm việc <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials Section -->
+        <section class="py-20 lg:py-28 bg-white dark:bg-background-dark overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4">Người dùng nói gì về
+                        chúng tôi</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400">Được tin dùng bởi các chuyên gia từ các công ty
+                        hàng đầu</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Review 1 -->
+                    <div
+                        class="p-8 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700">
+                        <div class="flex gap-1 text-yellow-400 mb-6">
+                            <span class="material-symbols-outlined filled text-xl">star</span>
+                            <span class="material-symbols-outlined filled text-xl">star</span>
+                            <span class="material-symbols-outlined filled text-xl">star</span>
+                            <span class="material-symbols-outlined filled text-xl">star</span>
+                            <span class="material-symbols-outlined filled text-xl">star</span>
+                        </div>
+                        <blockquote class="text-gray-700 dark:text-gray-300 mb-6 text-lg leading-relaxed">
+                            "Tôi chưa bao giờ nghĩ việc viết CV lại dễ dàng đến thế. AI gợi ý những từ khóa mà tôi không
+                            ngờ tới, giúp tôi vượt qua vòng lọc hồ sơ một cách ngoạn mục."
+                        </blockquote>
+                        <div class="flex items-center gap-4">
+                            <div class="h-12 w-12 rounded-full bg-cover bg-center"
+                                data-alt="Portrait of a smiling young woman"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCl0kAigBjyb0XohrcAuW8xxlyNrLoqwjGSn6xXeazGx4VcwPYXZS_f4h5HuWkeIXvFUrGdKTFJVVFzYdkErWg7QR7R4JH8u2cFO9dLYOQo4PtMNqSKhrRw0yj3CLfBXPXlpI4w-T_9d74mNn0y5Bks5l7Uod1u9aRfEzMXiNQ_KPTyA_4NueA0aCBejsE0kRZIWndLpdnTwJVXHAK6EZeOfYxNppcvVDv8S88h1pjH_8yE_CrAZ6R_BKvcgR3_RDYUBX7ifwq44L4");'>
+                            </div>
+                            <div>
+                                <div class="font-bold text-gray-900 dark:text-white">Minh Anh</div>
+                                <div class="text-sm text-gray-500">Marketing Manager</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 2 -->
+                    <div
+                        class="p-8 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700">
+                        <div class="flex gap-1 text-yellow-400 mb-6">
+                            <span class="material-symbols-outlined filled text-xl">star</span>
+                            <span class="material-symbols-outlined filled text-xl">star</span>
+                            <span class="material-symbols-outlined filled text-xl">star</span>
+                            <span class="material-symbols-outlined filled text-xl">star</span>
+                            <span class="material-symbols-outlined filled text-xl">star</span>
+                        </div>
+                        <blockquote class="text-gray-700 dark:text-gray-300 mb-6 text-lg leading-relaxed">
+                            "Tính năng phỏng vấn thử thực sự là cứu cánh. Tôi đã tự tin hơn rất nhiều khi bước vào buổi
+                            phỏng vấn thật và nhận được lời mời làm việc ngay sau đó."
+                        </blockquote>
+                        <div class="flex items-center gap-4">
+                            <div class="h-12 w-12 rounded-full bg-cover bg-center"
+                                data-alt="Portrait of a professional man in a suit"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAcXtwKxwEy5Vr7XJlEMT2ySVT8ZLMSy2nrwAjxPdMhdHboPVT4qoWJZS42-dDHDqfijkYYh_LkD3q58_m75Qgax2-2MP8vb5oJMcjNoeYkz6aGKNbJo_rZ439IkiJVaju8fW-hlrXviBpUpahyp9NNfOmUo8HXarHI0DJI0r4NSguYRTVdAYCiBgOuriG8E1ONzwzJe-gAWM0DHPVfppIbhILc42iTuNaVjphPmppbCyxglaakZEW9sOAcBsJYPEzQcmXCDhS0-Rw");'>
+                            </div>
+                            <div>
+                                <div class="font-bold text-gray-900 dark:text-white">Hoàng Nam</div>
+                                <div class="text-sm text-gray-500">Software Engineer</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 3 -->
+                    <div
+                        class="p-8 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700">
+                        <div class="flex gap-1 text-yellow-400 mb-6">
+                            <span class="material-symbols-outlined filled text-xl">star</span>
+                            <span class="material-symbols-outlined filled text-xl">star</span>
+                            <span class="material-symbols-outlined filled text-xl">star</span>
+                            <span class="material-symbols-outlined filled text-xl">star</span>
+                            <span class="material-symbols-outlined filled text-xl">star</span>
+                        </div>
+                        <blockquote class="text-gray-700 dark:text-gray-300 mb-6 text-lg leading-relaxed">
+                            "Giao diện đẹp, dễ sử dụng. Tôi thích cách ứng dụng tự động định dạng CV. Rất đáng đồng tiền
+                            bát gạo cho phiên bản Pro."
+                        </blockquote>
+                        <div class="flex items-center gap-4">
+                            <div class="h-12 w-12 rounded-full bg-cover bg-center"
+                                data-alt="Portrait of a confident businesswoman"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBiOogPXzOq6CdW3JuO4KOSV3QVGT-IPeS3fMedgWCe6kIG-jotTJINfxC928n3hQRePTCejiatSfQ2zfMjwq2CLr3ZNy6cCQyr31bt_mBGTW_6zweWZvwvM7BrKy6diDGqP33YKXa5wEozavnkF5bl0dMB1noWxavNO11yze5uDHYtxkzObh17jDKfb8nrdHUvP3W04noOBljxXOwF3iuTV-y7dN17q9GMahMrqxwUrLPGy5DCnu-xLXXy1JjVUTM5v86YpmvqIso");'>
+                            </div>
+                            <div>
+                                <div class="font-bold text-gray-900 dark:text-white">Thảo Vy</div>
+                                <div class="text-sm text-gray-500">HR Specialist</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA Section -->
+        <section class="py-20 px-4 sm:px-6 lg:px-8">
+            <div
+                class="max-w-5xl mx-auto bg-primary dark:bg-primary-dark rounded-3xl overflow-hidden shadow-2xl relative">
+                <!-- Background Pattern -->
+                <div class="absolute inset-0 opacity-10"
+                    style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px;">
+                </div>
+                <div class="relative z-10 px-8 py-16 md:py-20 text-center">
+                    <h2 class="text-3xl md:text-5xl font-black text-white mb-6">Sẵn sàng cho công việc mơ ước?</h2>
+                    <p class="text-blue-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+                        Bắt đầu tạo hồ sơ chuyên nghiệp của bạn ngay hôm nay, hoàn toàn miễn phí. Không yêu cầu thẻ tín
+                        dụng.
+                    </p>
+                    <button
+                        class="inline-flex items-center gap-3 bg-white text-primary hover:bg-gray-50 px-8 py-4 rounded-xl text-lg font-bold transition-all shadow-lg hover:shadow-xl hover:scale-105">
+                        <span class="material-symbols-outlined">rocket_launch</span>
+                        Tạo CV Ngay
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-background-dark border-t border-gray-100 dark:border-gray-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+                <div class="col-span-2 lg:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 text-primary">
+                            <span class="material-symbols-outlined text-xl">description</span>
+                        </div>
+                        <span class="text-xl font-bold text-gray-900 dark:text-white">AI Resume Builder</span>
+                    </div>
+                    <p class="text-gray-500 text-sm max-w-xs mb-6">
+                        Công cụ tạo CV thông minh giúp bạn tiếp cận cơ hội nghề nghiệp tốt nhất.
+                    </p>
+                    <div class="flex gap-4">
+                        <a class="text-gray-400 hover:text-primary transition-colors" href="#"><span
+                                class="material-symbols-outlined">social_leaderboard</span></a>
+                        <a class="text-gray-400 hover:text-primary transition-colors" href="#"><span
+                                class="material-symbols-outlined">public</span></a>
+                        <a class="text-gray-400 hover:text-primary transition-colors" href="#"><span
+                                class="material-symbols-outlined">mail</span></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white mb-4">Sản phẩm</h4>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a class="hover:text-primary transition-colors" href="#">Tính năng</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Mẫu CV</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Bảng giá</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white mb-4">Hỗ trợ</h4>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a class="hover:text-primary transition-colors" href="#">Trợ giúp</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Liên hệ</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Chính sách</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white mb-4">Công ty</h4>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a class="hover:text-primary transition-colors" href="#">Về chúng tôi</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Tuyển dụng</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="border-t border-gray-100 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-400">© 2024 AI Resume Builder. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-gray-400">
+                    <a class="hover:text-primary transition-colors" href="#">Điều khoản</a>
+                    <a class="hover:text-primary transition-colors" href="#">Bảo mật</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

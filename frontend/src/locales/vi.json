@@ -1,0 +1,275 @@
+{
+    "common": {
+        "appName": "AI Tạo CV",
+        "dashboard": "Bảng điều khiển",
+        "settings": "Cài đặt",
+        "logout": "Đăng xuất",
+        "login": "Đăng nhập",
+        "save": "Lưu",
+        "cancel": "Hủy",
+        "delete": "Xóa",
+        "edit": "Sửa",
+        "create": "Tạo mới",
+        "loading": "Đang tải...",
+        "success": "Thành công!",
+        "error": "Lỗi",
+        "confirm": "Xác nhận",
+        "next": "Tiếp theo",
+        "back": "Quay lại",
+        "about": "Giới thiệu"
+    },
+    "about": {
+        "title": "Về chúng tôi",
+        "subtitle": "Xây dựng công cụ giúp lập trình viên thành công",
+        "role": "Lập trình viên Full Stack",
+        "description": "Đam mê tạo ra các ứng dụng trực quan và mạnh mẽ để giải quyết các vấn đề thực tế. AI Resume Builder này được thiết kế để đơn giản hóa quá trình xin việc cho mọi người.",
+        "mission": {
+            "title": "Sứ mệnh",
+            "description": "Trao quyền cho người tìm việc với các công cụ AI giúp tạo ra các bản CV chuyên nghiệp một cách dễ dàng và hiệu quả."
+        },
+        "vision": {
+            "title": "Tầm nhìn",
+            "description": "Một thế giới nơi mọi chuyên gia đều có thể thể hiện bản thân tốt nhất trước nhà tuyển dụng tiềm năng mà không phải lo lắng về định dạng và viết lách."
+        },
+        "builtWith": "Xây dựng bằng",
+        "developerName": "Nguyen Huy Son"
+    },
+    "dashboard": {
+        "title": "CV của tôi",
+        "addNew": "Tạo CV mới",
+        "createNewDialog": {
+            "title": "Tạo CV mới",
+            "placeholder": "VD: CV Full Stack Developer",
+            "button": "Tạo"
+        },
+        "resumeCard": {
+            "view": "Xem",
+            "edit": "Chỉnh sửa",
+            "download": "Tải xuống",
+            "duplicate": "Nhân bản",
+            "delete": "Xóa"
+        },
+        "empty": "Chưa có CV nào. Tạo CV đầu tiên của bạn!"
+    },
+    "home": {
+        "title": "Xây dựng Hồ Sơ Của Bạn",
+        "titleHighlight": "Với AI",
+        "subtitle": "Dễ dàng tạo nên một hồ sơ ấn tượng với Trình tạo CV sử dụng công nghệ AI tiên tiến của chúng tôi. Tối ưu hóa cơ hội việc làm của bạn ngay hôm nay.",
+        "getStarted": "Bắt đầu ngay",
+        "watchVideo": "Xem Video",
+        "featuredIn": "ĐƯỢC ĐỀ CẬP TRÊN",
+        "newBadge": "Tính năng AI mới có sẵn",
+        "hero": {
+            "title": "Xây dựng Hồ Sơ Của Bạn",
+            "titleHighlight": "Với AI",
+            "subtitle": "Dễ dàng tạo nên một hồ sơ ấn tượng với Trình tạo CV sử dụng công nghệ AI tiên tiến của chúng tôi. Tối ưu hóa cơ hội việc làm của bạn ngay hôm nay.",
+            "getStarted": "Bắt đầu ngay",
+            "watchVideo": "Xem Video",
+            "newBadge": "Tính năng AI mới có sẵn",
+            "profileOptimized": "Hồ sơ đã tối ưu",
+            "readyToApply": "Sẵn sàng ứng tuyển"
+        },
+        "howItWorks": {
+            "featureTitle": "TÍNH NĂNG NỔI BẬT",
+            "description": "Quy trình đơn giản, hiệu quả tối đa. Tham gia cùng hàng ngàn ứng viên thành công.",
+            "title": "Cách hoạt động?",
+            "subtitle": "Bắt đầu chỉ với 3 bước đơn giản"
+        },
+        "stats": {
+            "stat1": "CV Đã Tạo",
+            "stat2": "Tỷ lệ thành công",
+            "stat3": "Người dùng hàng ngày",
+            "stat4": "Hỗ trợ 24/7"
+        },
+        "features": {
+            "createResume": {
+                "title": "AI Tạo CV",
+                "description": "Công nghệ AI tự động viết và tối ưu nội dung CV của bạn dựa trên kinh nghiệm và kỹ năng, đảm bảo chuyên nghiệp và thu hút.",
+                "button": "Tạo ngay"
+            },
+            "mockInterview": {
+                "title": "Phỏng vấn thử với AI",
+                "description": "Luyện tập trả lời phỏng vấn với AI Bot thông minh. Nhận phản hồi chi tiết về nội dung, ngữ điệu và ngôn ngữ cơ thể.",
+                "button": "Thử ngay"
+            },
+            "findJobs": {
+                "title": "Tìm việc làm",
+                "description": "Hệ thống tự động kết nối hồ sơ của bạn với hàng ngàn nhà tuyển dụng phù hợp, giúp bạn tìm được công việc mơ ước nhanh hơn.",
+                "button": "Tìm việc"
+            }
+        },
+        "testimonials": {
+            "title": "Người dùng nói gì về chúng tôi",
+            "subtitle": "Tham gia cùng hàng ngàn chuyên gia đã tìm được công việc mơ ước",
+            "testimonial1": {
+                "name": "Minh Tuấn",
+                "role": "Kỹ sư phần mềm",
+                "quote": "Công cụ này đã giúp tôi nhận được offer từ một công ty công nghệ hàng đầu. Các gợi ý AI thực sự hữu ích!"
+            },
+            "testimonial2": {
+                "name": "Hoàng Nam",
+                "role": "Product Manager",
+                "quote": "Tính năng phỏng vấn thử giúp tôi tự tin hơn rất nhiều khi bước vào phỏng vấn thật."
+            },
+            "testimonial3": {
+                "name": "Thu Hà",
+                "role": "Giám đốc Marketing",
+                "quote": "Đơn giản, trực quan và hiệu quả. Rất khuyến khích cho bất cứ ai đang tìm việc."
+            }
+        },
+        "cta": {
+            "title": "Sẵn sàng cho công việc mơ ước?",
+            "subtitle": "Bắt đầu tạo hồ sơ chuyên nghiệp của bạn ngay hôm nay, hoàn toàn miễn phí. Không yêu cầu thẻ tín dụng.",
+            "getStarted": "Tạo CV Ngay"
+        }
+    },
+    "footer": {
+        "description": "Công cụ tạo CV thông minh giúp bạn tiếp cận cơ hội nghề nghiệp tốt nhất.",
+        "products": "Sản phẩm",
+        "features": "Tính năng",
+        "templates": "Mẫu CV",
+        "pricing": "Bảng giá",
+        "support": "Hỗ trợ",
+        "help": "Trợ giúp",
+        "contact": "Liên hệ",
+        "policy": "Chính sách",
+        "company": "Công ty",
+        "about": "Về chúng tôi",
+        "blog": "Blog",
+        "careers": "Tuyển dụng",
+        "terms": "Điều khoản",
+        "privacy": "Bảo mật"
+    },
+    "resume": {
+        "sections": {
+            "personal": "Thông tin cá nhân",
+            "summary": "Giới thiệu bản thân",
+            "experience": "Kinh nghiệm làm việc",
+            "education": "Học vấn",
+            "skills": "Kỹ năng",
+            "projects": "Dự án",
+            "certifications": "Chứng chỉ",
+            "languages": "Ngôn ngữ",
+            "awards": "Giải thưởng"
+        },
+        "form": {
+            "firstName": "Tên",
+            "lastName": "Họ",
+            "jobTitle": "Vị trí công việc",
+            "email": "Email",
+            "phone": "Số điện thoại",
+            "address": "Địa chỉ",
+            "city": "Thành phố",
+            "country": "Quốc gia",
+            "linkedin": "LinkedIn URL",
+            "github": "GitHub URL",
+            "website": "Website",
+            "summary": "Viết giới thiệu bản thân...",
+            "addMore": "Thêm mới",
+            "remove": "Xóa",
+            "generateAI": "Tạo bằng AI"
+        },
+        "experience": {
+            "title": "Chức danh",
+            "company": "Tên công ty",
+            "location": "Địa điểm",
+            "startDate": "Ngày bắt đầu",
+            "endDate": "Ngày kết thúc",
+            "currentlyWorking": "Đang làm việc tại đây",
+            "description": "Mô tả công việc"
+        },
+        "education": {
+            "university": "Trường / Viện",
+            "degree": "Bằng cấp",
+            "major": "Chuyên ngành",
+            "startDate": "Ngày bắt đầu",
+            "endDate": "Ngày kết thúc",
+            "gpa": "GPA"
+        },
+        "skills": {
+            "name": "Tên kỹ năng",
+            "rating": "Mức độ thành thạo"
+        },
+        "projects": {
+            "projectName": "Tên dự án",
+            "techStack": "Công nghệ sử dụng",
+            "projectUrl": "Link dự án (tùy chọn)"
+        },
+        "certifications": {
+            "certName": "Tên chứng chỉ",
+            "issuer": "Tổ chức cấp",
+            "issueDate": "Ngày cấp",
+            "credentialUrl": "Link chứng chỉ (tùy chọn)"
+        },
+        "preview": {
+            "title": "Xem trước",
+            "download": "Tải PDF",
+            "share": "Chia sẻ CV"
+        }
+    },
+    "ai": {
+        "builder": {
+            "title": "AI Tạo CV",
+            "selectTemplate": "Chọn Template",
+            "hoverToPreview": "Di chuột để xem trước • Click để chọn",
+            "chatPlaceholder": "Nhập câu trả lời...",
+            "complete": "CV đã hoàn thành!",
+            "restart": "Bắt đầu lại"
+        },
+        "interview": {
+            "title": "Phỏng vấn thử với AI",
+            "description": "Luyện tập trả lời phỏng vấn dựa trên CV của bạn",
+            "start": "Bắt đầu phỏng vấn",
+            "question": "Câu hỏi phỏng vấn",
+            "yourAnswer": "Câu trả lời của bạn",
+            "feedback": "Nhận xét từ AI",
+            "nextQuestion": "Câu tiếp theo",
+            "finish": "Kết thúc phỏng vấn"
+        }
+    },
+    "templates": {
+        "classic": {
+            "name": "Cổ điển",
+            "description": "Bố cục truyền thống, phù hợp mọi ngành nghề"
+        },
+        "modern": {
+            "name": "Hiện đại",
+            "description": "Thiết kế sidebar, phù hợp IT/Sáng tạo"
+        },
+        "minimal": {
+            "name": "Tối giản",
+            "description": "Thiết kế sạch sẽ, nhiều khoảng trắng"
+        },
+        "professional": {
+            "name": "Chuyên nghiệp",
+            "description": "Phong cách doanh nghiệp, đầy đủ nhất"
+        }
+    },
+    "jobTracker": {
+        "title": "Quản lý đơn ứng tuyển",
+        "addApplication": "Thêm đơn ứng tuyển",
+        "columns": {
+            "wishlist": "Quan tâm",
+            "applied": "Đã nộp",
+            "interview": "Phỏng vấn",
+            "offer": "Nhận offer",
+            "rejected": "Bị từ chối"
+        },
+        "form": {
+            "company": "Tên công ty",
+            "position": "Vị trí",
+            "url": "Link công việc",
+            "notes": "Ghi chú",
+            "appliedDate": "Ngày nộp đơn"
+        },
+        "metrics": "Đang theo dõi {{count}} đơn ứng tuyển",
+        "messages": {
+            "validationError": "Vui lòng nhập tên công ty và vị trí",
+            "addSuccess": "Đã thêm đơn ứng tuyển!",
+            "addError": "Thêm thất bại",
+            "statusError": "Cập nhật trạng thái thất bại",
+            "deleteSuccess": "Đã xóa đơn ứng tuyển",
+            "deleteError": "Xóa thất bại"
+        }
+    }
+}

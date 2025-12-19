@@ -1,0 +1,328 @@
+{
+    "common": {
+        "appName": "AI Resume Builder",
+        "dashboard": "Dashboard",
+        "settings": "Settings",
+        "logout": "Sign Out",
+        "login": "Sign In",
+        "save": "Save",
+        "cancel": "Cancel",
+        "delete": "Delete",
+        "edit": "Edit",
+        "create": "Create",
+        "loading": "Loading...",
+        "success": "Success!",
+        "error": "Error",
+        "confirm": "Confirm",
+        "next": "Next",
+        "back": "Back",
+        "about": "About Us"
+    },
+    "about": {
+        "title": "About Us",
+        "subtitle": "Building tools to help developers succeed",
+        "role": "Full Stack Developer",
+        "description": "Passionate about creating intuitive and powerful applications that solve real-world problems. This AI Resume Builder is designed to streamline the job application process for everyone.",
+        "mission": {
+            "title": "Our Mission",
+            "description": "To empower job seekers with AI-driven tools that make creating professional resumes effortless and effective."
+        },
+        "vision": {
+            "title": "Our Vision",
+            "description": "A world where every professional can present their best self to potential employers without the stress of formatting and writing."
+        },
+        "builtWith": "Built With",
+        "developerName": "Nguyen Huy Son"
+    },
+    "dashboard": {
+        "title": "My Resumes",
+        "addNew": "Add New Resume",
+        "createNewDialog": {
+            "title": "Create New Resume",
+            "placeholder": "Ex. Full Stack Developer Resume",
+            "button": "Create"
+        },
+        "resumeCard": {
+            "view": "View",
+            "edit": "Edit",
+            "download": "Download",
+            "duplicate": "Duplicate",
+            "delete": "Delete"
+        },
+        "empty": "No resumes yet. Create your first one!"
+    },
+    "home": {
+        "title": "Build Your Customer Resume",
+        "titleHighlight": "With AI",
+        "subtitle": "Effortlessly create a standout resume with our advanced AI-powered Resume Builder. Optimize your job chances today.",
+        "getStarted": "Get Started Now",
+        "watchVideo": "Watch Video",
+        "featuredIn": "FEATURED IN",
+        "newBadge": "New AI Features Available",
+        "hero": {
+            "title": "Build Your Resume",
+            "titleHighlight": "With AI",
+            "subtitle": "Effortlessly Craft a Standout Resume with Our AI-Powered Builder",
+            "getStarted": "Get Started",
+            "watchVideo": "Watch Video",
+            "newBadge": "New AI Features Available",
+            "profileOptimized": "Profile Optimized",
+            "readyToApply": "Ready to apply"
+        },
+        "howItWorks": {
+            "featureTitle": "KEY FEATURES",
+            "description": "Simple process, maximum efficiency. Join thousands of successful candidates.",
+            "title": "How it Works?",
+            "subtitle": "Get started in just 3 simple steps"
+        },
+        "stats": {
+            "stat1": "Resumes Created",
+            "stat2": "Success Rate",
+            "stat3": "Daily Users",
+            "stat4": "Support Available"
+        },
+        "features": {
+            "createResume": {
+                "title": "AI Resume Creator",
+                "description": "AI automatically writes and optimizes your resume content based on experience and skills, ensuring professionalism and appeal.",
+                "button": "Create Now"
+            },
+            "mockInterview": {
+                "title": "AI Mock Interview",
+                "description": "Practice interview answers with smart AI Bot. Get detailed feedback on content, tone, and body language.",
+                "button": "Try Now"
+            },
+            "findJobs": {
+                "title": "Find Jobs",
+                "description": "System automatically connects your profile with thousands of suitable employers, helping you find your dream job faster.",
+                "button": "Find Jobs"
+            }
+        },
+        "testimonials": {
+            "title": "What Our Users Say",
+            "subtitle": "Join thousands of satisfied professionals who landed their dream jobs",
+            "testimonial1": {
+                "name": "Sarah Johnson",
+                "role": "Software Engineer",
+                "quote": "This builder helped me land a job at a top tech company. The AI suggestions were spot on!"
+            },
+            "testimonial2": {
+                "name": "David Chen",
+                "role": "Product Manager",
+                "quote": "The interview prep feature gave me the confidence I needed to ace my interviews."
+            },
+            "testimonial3": {
+                "name": "Emily Davis",
+                "role": "Marketing Director",
+                "quote": "Simple, intuitive, and effective. Highly recommended for anyone job hunting."
+            }
+        },
+        "cta": {
+            "title": "Ready for Your Dream Job?",
+            "subtitle": "Start building your professional resume today, completely free. No credit card required.",
+            "getStarted": "Create Resume Now"
+        }
+    },
+    "stats": {
+        "stat1": "Resumes Created",
+        "stat2": "Success Rate",
+        "stat3": "Daily Users",
+        "stat4": "Support Available"
+    },
+    "howItWorks": {
+        "title": "How it Works?",
+        "subtitle": "Get started in just 3 simple steps",
+        "featureTitle": "KEY FEATURES",
+        "description": "Simple process, maximum efficiency. Join thousands of successful candidates."
+    },
+    "features": {
+        "createResume": {
+            "title": "AI Resume Creator",
+            "description": "AI automatically writes and optimizes your resume content based on experience and skills, ensuring professionalism and appeal.",
+            "button": "Create Now"
+        },
+        "mockInterview": {
+            "title": "AI Mock Interview",
+            "description": "Practice interview answers with smart AI Bot. Get detailed feedback on content, tone, and body language.",
+            "button": "Try Now"
+        },
+        "findJobs": {
+            "title": "Find Jobs",
+            "description": "System automatically connects your profile with thousands of suitable employers, helping you find your dream job faster.",
+            "button": "Find Jobs"
+        }
+    },
+    "testimonials": {
+        "title": "What Our Users Say",
+        "subtitle": "Join thousands of satisfied professionals who landed their dream jobs",
+        "testimonial1": {
+            "name": "Sarah Johnson",
+            "role": "Software Engineer",
+            "quote": "This builder helped me land a job at a top tech company. The AI suggestions were spot on!"
+        },
+        "testimonial2": {
+            "name": "David Chen",
+            "role": "Product Manager",
+            "quote": "The interview prep feature gave me the confidence I needed to ace my interviews."
+        },
+        "testimonial3": {
+            "name": "Emily Davis",
+            "role": "Marketing Director",
+            "quote": "Simple, intuitive, and effective. Highly recommended for anyone job hunting."
+        }
+    },
+    "cta": {
+        "title": "Ready for Your Dream Job?",
+        "subtitle": "Start building your professional resume today, completely free. No credit card required.",
+        "getStarted": "Create Resume Now"
+    },
+    "footer": {
+        "description": "Intelligent resume building tool helping you access best career opportunities.",
+        "products": "Products",
+        "features": "Features",
+        "templates": "Resume Templates",
+        "pricing": "Pricing",
+        "support": "Support",
+        "help": "Help Center",
+        "contact": "Contact Us",
+        "policy": "Policy",
+        "company": "Company",
+        "about": "About Us",
+        "blog": "Blog",
+        "careers": "Careers",
+        "terms": "Terms",
+        "privacy": "Privacy"
+    },
+    "resume": {
+        "sections": {
+            "personal": "Personal Details",
+            "summary": "Professional Summary",
+            "experience": "Work Experience",
+            "education": "Education",
+            "skills": "Skills",
+            "projects": "Projects",
+            "certifications": "Certifications",
+            "languages": "Languages",
+            "awards": "Awards"
+        },
+        "form": {
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "jobTitle": "Job Title",
+            "email": "Email",
+            "phone": "Phone",
+            "address": "Address",
+            "city": "City",
+            "country": "Country",
+            "linkedin": "LinkedIn URL",
+            "github": "GitHub URL",
+            "website": "Website",
+            "summary": "Write your professional summary...",
+            "addMore": "Add More",
+            "remove": "Remove",
+            "generateAI": "Generate with AI"
+        },
+        "experience": {
+            "title": "Position Title",
+            "company": "Company Name",
+            "location": "City, Country",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "currentlyWorking": "Currently Working Here",
+            "description": "Work Description"
+        },
+        "education": {
+            "university": "University / Institution",
+            "degree": "Degree",
+            "major": "Field of Study",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "gpa": "GPA"
+        },
+        "skills": {
+            "name": "Skill Name",
+            "rating": "Proficiency Level"
+        },
+        "projects": {
+            "projectName": "Project Name",
+            "techStack": "Tech Stack",
+            "projectUrl": "Project URL (optional)"
+        },
+        "certifications": {
+            "certName": "Certification Name",
+            "issuer": "Issuing Organization",
+            "issueDate": "Issue Date",
+            "credentialUrl": "Credential URL (optional)"
+        },
+        "preview": {
+            "title": "Preview",
+            "download": "Download PDF",
+            "share": "Share Resume"
+        }
+    },
+    "ai": {
+        "builder": {
+            "title": "AI Resume Builder",
+            "selectTemplate": "Select Template",
+            "hoverToPreview": "Hover to preview • Click to select",
+            "chatPlaceholder": "Type your answer...",
+            "complete": "CV completed!",
+            "restart": "Start Over"
+        },
+        "interview": {
+            "title": "AI Interview Prep",
+            "description": "Practice interview questions based on your resume",
+            "start": "Start Interview",
+            "question": "Interview Question",
+            "yourAnswer": "Your Answer",
+            "feedback": "AI Feedback",
+            "nextQuestion": "Next Question",
+            "finish": "Finish Interview"
+        }
+    },
+    "templates": {
+        "classic": {
+            "name": "Classic",
+            "description": "Traditional layout, suitable for all industries"
+        },
+        "modern": {
+            "name": "Modern",
+            "description": "Modern, sidebar layout for IT/Creative"
+        },
+        "minimal": {
+            "name": "Minimal",
+            "description": "Clean design with lots of whitespace"
+        },
+        "professional": {
+            "name": "Professional",
+            "description": "Enterprise style, comprehensive layout"
+        }
+    },
+    "jobTracker": {
+        "title": "Job Application Tracker",
+        "addApplication": "Add Application",
+        "columns": {
+            "wishlist": "Wishlist",
+            "applied": "Applied",
+            "interview": "Interview",
+            "offer": "Offer",
+            "rejected": "Rejected"
+        },
+        "form": {
+            "company": "Company Name",
+            "position": "Position",
+            "url": "Job URL",
+            "notes": "Notes",
+            "appliedDate": "Applied Date"
+        },
+        "metrics": "{{count}} applications tracked",
+        "messages": {
+            "validationError": "Company and position are required",
+            "addSuccess": "Application added!",
+            "addError": "Failed to add application",
+            "statusError": "Failed to update status",
+            "deleteSuccess": "Application deleted",
+            "deleteError": "Failed to delete application"
+        }
+    }
+}

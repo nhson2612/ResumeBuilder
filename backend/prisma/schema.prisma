@@ -1,0 +1,105 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model UserResume {
+  id              Int      @id @default(autoincrement())
+  resumeId        String   @unique
+  title           String
+  userEmail       String?
+  userName        String?
+  userId          String?  // Clerk User ID
+
+  // Template & Styling
+  template        String?  @default("classic")
+  themeColor      String?  @default("#6366f1")
+  fontFamily      String?  @default("Inter")
+  fontSize        String?  @default("medium") // small, medium, large
+
+  // Personal Information
+  firstName       String?
+  lastName        String?
+  jobTitle        String?
+  email           String?
+  phone           String?
+  address         String?
+  city            String?
+  state           String?
+  country         String?
+  zipCode         String?
+  dateOfBirth     String?
+  nationality     String?
+  photoUrl        String?  // Profile photo URL
+
+  // Social & Links
+  linkedIn        String?
+  github          String?
+  website         String?
+  portfolio       String?
+  twitter         String?
+  socialLinks     String?  // JSON: [{platform, url}]
+
+  // Summary & Objective
+  summary         String?  // Professional summary
+  objective       String?  // Career objective (for some templates)
+
+  // Main Sections (stored as JSON strings)
+  experience      String?  // [{title, companyName, location, startDate, endDate, currentlyWorking, workSummery, achievements}]
+  education       String?  // [{universityName, degree, major, startDate, endDate, gpa, description}]
+  skills          String?  // [{name, rating, category}]
+  projects        String?  // [{projectName, techStack, projectUrl, startDate, endDate, description}]
+  certifications  String?  // [{certName, issuer, issueDate, expiryDate, credentialId, credentialUrl}]
+
+  // Additional Sections
+  languages       String?  // [{language, proficiency}] - Native, Fluent, Intermediate, Basic
+  awards          String?  // [{title, issuer, date, description}]
+  publications    String?  // [{title, publisher, date, url, description}]
+  references      String?  // [{name, title, company, email, phone, relationship}]
+  hobbies         String?  // [{name, description}] or comma-separated string
+  volunteer       String?  // [{organization, role, startDate, endDate, description}]
+  courses         String?  // [{name, institution, date, description}]
+  customSections  String?  // [{sectionTitle, content}] - for template-specific sections
+
+  // Template Settings (JSON - varies by template)
+  templateSettings String? // {showPhoto, sectionOrder, colorScheme, etc.}
+
+  // Timestamps
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model JobApplication {
+  id            Int      @id @default(autoincrement())
+  applicationId String   @unique
+  userId        String   // Clerk User ID
+  
+  // Job Details
+  company       String
+  position      String
+  jobUrl        String?
+  location      String?
+  salary        String?
+  
+  // Application Status (Kanban columns)
+  status        String   @default("wishlist") // wishlist, applied, interview, offer, rejected
+  
+  // Dates
+  appliedDate   String?
+  deadline      String?
+  
+  // Notes & Details
+  notes         String?
+  contacts      String?  // JSON: [{name, email, role}]
+  
+  // Timestamps
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
