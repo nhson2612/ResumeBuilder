@@ -1,7 +1,5 @@
 # AI Resume Builder
 
-![AI Resume Builder](https://github.com/rrs301/AI-Resume-Builder/assets/20216436/0a78231c-754e-4f2e-94b0-ae9474cbf613)
-
 AI Resume Builder is a comprehensive web application that helps users create professional, ATS-optimized resumes using artificial intelligence. The platform combines modern web technologies with AI-powered content generation to streamline the job application process.
 
 ## 🚀 Features
