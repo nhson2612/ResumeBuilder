@@ -311,6 +311,17 @@ The following environment variables are required for the interview feature:
 - Speech recognition accuracy may vary based on audio quality and accents
 - Text-to-speech voices vary by browser and operating system
 
+## 👥 Authors
+
+This project was developed by:
+
+- nnhson2612
+- ClaudeAI
+- QwenAI
+- Gemini
+- ChattGPT
+- DeepSeek
+
 ## 🤝 Contributing
 
 Contributions are welcome!
@@ -326,4 +337,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
-**Built with ❤️ by [Your Name]**
+**Built with ❤️ by the development team**
