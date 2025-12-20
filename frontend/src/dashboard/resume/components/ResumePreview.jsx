@@ -13,12 +13,16 @@ import ClassicTemplate from './templates/ClassicTemplate'
 import ModernTemplate from './templates/ModernTemplate'
 import MinimalTemplate from './templates/MinimalTemplate'
 import ProfessionalTemplate from './templates/ProfessionalTemplate'
+import ExecutiveTemplate from './templates/ExecutiveTemplate'
+import CreativeTemplate from './templates/CreativeTemplate'
 
 const TEMPLATES = {
     classic: ClassicTemplate,
     modern: ModernTemplate,
     minimal: MinimalTemplate,
     professional: ProfessionalTemplate,
+    executive: ExecutiveTemplate,
+    creative: CreativeTemplate,
 }
 
 function ResumePreview() {

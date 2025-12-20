@@ -113,3 +113,92 @@
       @apply bg-background text-foreground;
     }
   }
+
+  /* Resume Template Prose Styles */
+  .prose-classic ul,
+  .prose-modern ul,
+  .prose-minimal ul,
+  .prose-executive ul,
+  .prose-professional ul,
+  .prose-creative ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0.5rem 0;
+  }
+
+  .prose-classic li,
+  .prose-modern li,
+  .prose-minimal li,
+  .prose-executive li,
+  .prose-professional li,
+  .prose-creative li {
+    font-size: 11px;
+    color: #4b5563;
+    line-height: 1.5;
+    padding-left: 1rem;
+    position: relative;
+    margin-bottom: 0.25rem;
+  }
+
+  .prose-classic li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #9ca3af;
+  }
+
+  .prose-modern li::before,
+  .prose-executive li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 5px;
+    height: 5px;
+    border-radius: 9999px;
+    background-color: currentColor;
+    opacity: 0.4;
+  }
+
+  .prose-minimal li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 4px;
+    height: 4px;
+    border-radius: 9999px;
+    background-color: #9ca3af;
+  }
+
+  .prose-professional li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: currentColor;
+    opacity: 0.6;
+  }
+
+  .prose-creative li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.4em;
+    width: 6px;
+    height: 6px;
+    border-radius: 2px;
+    background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
+  }
+
+  /* Print optimization for resumes */
+  @media print {
+    .prose-classic li::before,
+    .prose-modern li::before,
+    .prose-minimal li::before,
+    .prose-executive li::before,
+    .prose-professional li::before,
+    .prose-creative li::before {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
