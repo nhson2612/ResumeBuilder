@@ -13,4 +13,6 @@ RUN npx prisma generate
 
 EXPOSE 5000
 
-CMD ["npm", "run", "start"]
+RUN npm install -g pm2
+
+CMD ["pm2-runtime", "index.js"]
