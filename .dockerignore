@@ -3,3 +3,11 @@ node_modules
 .env
 dist
 build
+coverage
+test
+**/*.test.js
+**/*.spec.js
+.github
+sonar-project.properties
+*.md
+LICENSE
