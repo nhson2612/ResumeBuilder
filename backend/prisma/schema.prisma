@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
@@ -74,6 +74,9 @@ model UserResume {
   // Timestamps
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
+  
+  // Relations
+  applications    JobApplication[]
 }
 
 model JobApplication {
@@ -99,7 +102,53 @@ model JobApplication {
   notes         String?
   contacts      String?  // JSON: [{name, email, role}]
   
+  // Relations
+  userResumeId  Int?
+  userResume    UserResume? @relation(fields: [userResumeId], references: [id])
+  
   // Timestamps
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
+}
+
+// ===== Interview Feature =====
+model InterviewSession {
+  id            Int       @id @default(autoincrement())
+  sessionId     String    @unique
+  userId        String
+  resumeId      String?
+  
+  // Settings
+  questionCount Int       @default(5)
+  difficulty    String    @default("medium") // easy, medium, hard
+  voiceEnabled  Boolean   @default(false)
+  
+  // Results
+  totalScore    Int?
+  status        String    @default("in_progress") // in_progress, completed
+  completedAt   DateTime?
+  
+  // Relations
+  questions     InterviewQuestion[]
+  
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model InterviewQuestion {
+  id            Int       @id @default(autoincrement())
+  questionId    String    @unique
+  sessionId     String
+  session       InterviewSession @relation(fields: [sessionId], references: [sessionId])
+  
+  questionNumber Int
+  question      String
+  userAnswer    String?
+  
+  // AI Evaluation
+  evaluation    String?   // good, needs_improvement, weak
+  aiFeedback    String?
+  suggestedAnswer String?
+  
+  createdAt     DateTime  @default(now())
 }

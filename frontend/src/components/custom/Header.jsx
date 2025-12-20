@@ -42,6 +42,12 @@ function Header() {
                         <Link to={'/dashboard'}>
                             <Button variant="outline">{t('common.dashboard')}</Button>
                         </Link>
+                        <Link to={'/dashboard/jobs'}>
+                            <Button variant="ghost" size="sm">📋 Jobs</Button>
+                        </Link>
+                        <Link to={'/dashboard/interviews'}>
+                            <Button variant="ghost" size="sm">🎤 Interviews</Button>
+                        </Link>
                         <UserButton />
                     </> :
                     <Link to={'/auth/sign-in'}>

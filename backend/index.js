@@ -5,6 +5,7 @@ require('dotenv').config();
 const resumeRoutes = require('./src/routes/resumeRoutes');
 const aiRoutes = require('./src/routes/aiRoutes');
 const jobRoutes = require('./src/routes/jobRoutes');
+const interviewRoutes = require('./src/routes/interviewRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use('/api', resumeRoutes);
 app.use('/api', aiRoutes);
 app.use('/api/jobs', jobRoutes);
+app.use('/api/interview', interviewRoutes);
 
 if (require.main === module) {
     app.listen(PORT, () => {

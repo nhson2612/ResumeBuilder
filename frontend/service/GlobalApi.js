@@ -28,6 +28,15 @@ const CreateJobApplication = (data, token) => axiosClient.post('/jobs', data, { 
 const UpdateJobApplication = (id, data, token) => axiosClient.put('/jobs/' + id, data, { headers: { Authorization: `Bearer ${token}` } });
 const DeleteJobApplication = (id, token) => axiosClient.delete('/jobs/' + id, { headers: { Authorization: `Bearer ${token}` } });
 
+// Interview Sessions
+const GetInterviewSessions = (token) => axiosClient.get('/interview/sessions', { headers: { Authorization: `Bearer ${token}` } });
+const CreateInterviewSession = (data, token) => axiosClient.post('/interview/sessions', data, { headers: { Authorization: `Bearer ${token}` } });
+const GetInterviewSessionDetails = (id, token) => axiosClient.get('/interview/sessions/' + id, { headers: { Authorization: `Bearer ${token}` } });
+const SaveInterviewQuestion = (sessionId, data, token) => axiosClient.post('/interview/sessions/' + sessionId + '/questions', data, { headers: { Authorization: `Bearer ${token}` } });
+const CompleteInterviewSession = (id, data, token) => axiosClient.put('/interview/sessions/' + id + '/complete', data, { headers: { Authorization: `Bearer ${token}` } });
+const DeleteInterviewSession = (id, token) => axiosClient.delete('/interview/sessions/' + id, { headers: { Authorization: `Bearer ${token}` } });
+const GetWeakQuestions = (token) => axiosClient.get('/interview/weak-questions', { headers: { Authorization: `Bearer ${token}` } });
+
 export default {
     CreateNewResume,
     GetUserResumes,
@@ -39,5 +48,13 @@ export default {
     GetJobApplications,
     CreateJobApplication,
     UpdateJobApplication,
-    DeleteJobApplication
+    DeleteJobApplication,
+    // Interview
+    GetInterviewSessions,
+    CreateInterviewSession,
+    GetInterviewSessionDetails,
+    SaveInterviewQuestion,
+    CompleteInterviewSession,
+    DeleteInterviewSession,
+    GetWeakQuestions
 }

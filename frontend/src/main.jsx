@@ -8,6 +8,7 @@ import SignInPage from './auth/sign-in/index.jsx'
 import Home from './home/index.jsx'
 import Dashboard from './dashboard/index.jsx'
 import JobTracker from './dashboard/JobTracker.jsx'
+import InterviewHistory from './dashboard/InterviewHistory.jsx'
 import { ClerkProvider } from '@clerk/clerk-react'
 import EditResume from './dashboard/resume/[resumeId]/edit/index.jsx'
 import ViewResume from './my-resume/[resumeId]/view/index.jsx'
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/jobs',
         element: <JobTracker />
+      },
+      {
+        path: '/dashboard/interviews',
+        element: <InterviewHistory />
       },
     ]
   },
