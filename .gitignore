@@ -5,11 +5,13 @@ node_modules
 .DS_Store
 
 
-AWS_DEPLOYMENT.md
-CI_CD_INSTRUCTIONS.md
-DEPLOYMENT_PROGRESS.md
-GCP_DEPLOYMENT.md
+# AWS_DEPLOYMENT.md
+# CI_CD_INSTRUCTIONS.md
+# DEPLOYMENT_PROGRESS.md
+# GCP_DEPLOYMENT.md
 
 *.pdf
 
 *.db
+.gemini/
+gha-creds-*.json
