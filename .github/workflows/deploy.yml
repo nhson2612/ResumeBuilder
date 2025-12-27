@@ -43,3 +43,21 @@ jobs:
             
             echo "Pruning unused images to save space..."
             docker image prune -f
+            
+            echo "Waiting for services to start..."
+            sleep 10
+
+      - name: Health Check
+        run: |
+          echo "Checking backend health..."
+          for i in {1..5}; do
+            response=$(curl -s -o /dev/null -w "%{http_code}" https://ai-resume-builder.nhson2612.space/api/health || echo "000")
+            if [ "$response" = "200" ]; then
+              echo "✅ Health check passed!"
+              exit 0
+            fi
+            echo "Attempt $i: HTTP $response - Retrying in 10s..."
+            sleep 10
+          done
+          echo "❌ Health check failed after 5 attempts"
+          exit 1
