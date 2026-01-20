@@ -1,0 +1,68 @@
+name: Debug SSH Connection
+on: workflow_dispatch
+
+jobs:
+  debug-network:
+    name: 🔍 Debug Network & SSH
+    runs-on: ubuntu-latest
+    steps:
+      - name: 1. Check Runner IP
+        run: |
+          echo "GitHub Runner Public IP:"
+          curl -s https://api.ipify.org
+          echo ""
+          echo "Use this IP to verify against AWS Security Group rules if you are using specific IP allowlisting."
+
+      - name: 2. Test TCP Reachability (Netcat)
+        env:
+          HOST: ${{ secrets.EC2_HOST }}
+        run: |
+          if [ -z "$HOST" ]; then
+            echo "❌ CRITICAL: Secret 'EC2_HOST' is missing or empty."
+            exit 1
+          fi
+
+          echo "----------------------------------------"
+          echo "Testing TCP connection to $HOST:22"
+          echo "----------------------------------------"
+          
+          # nc command: -z (scan), -v (verbose), -w 5 (wait 5s)
+          if nc -zv -w 5 $HOST 22; then
+             echo "✅ SUCCESS: Port 22 is OPEN and REACHABLE from GitHub Runner."
+          else
+             echo "❌ FAILURE: Connection timed out or refused on port 22."
+             echo "----------------------------------------"
+             echo "POSSIBLE CAUSES:"
+             echo "1. AWS Security Group does not allow Port 22 from 0.0.0.0/0."
+             echo "2. The IP address in 'EC2_HOST' is incorrect or changed (verify in AWS Console)."
+             echo "3. Server firewall (UFW) is blocking the connection."
+             exit 1
+          fi
+
+      - name: 3. Test SSH Authentication (Verbose)
+        env:
+          HOST: ${{ secrets.EC2_HOST }}
+          USER: ${{ secrets.EC2_USER }}
+          KEY: ${{ secrets.EC2_KEY }}
+        run: |
+          echo "----------------------------------------"
+          echo "Setting up private key for testing..."
+          mkdir -p ~/.ssh
+          echo "$KEY" > ~/.ssh/debug_key
+          chmod 600 ~/.ssh/debug_key
+          
+          if [ ! -s ~/.ssh/debug_key ]; then
+             echo "❌ CRITICAL: Secret 'EC2_KEY' seems empty or failed to write."
+             exit 1
+          fi
+
+          echo "Starting SSH connection attempt with verbose logging (-v)..."
+          echo "----------------------------------------"
+          
+          # Debug ssh connection
+          # -i: use key
+          # -o StrictHostKeyChecking=no: Don't block on host verification
+          # -o ConnectTimeout=10: Don't wait forever
+          # -vvv: Maximum verbosity (shows handshake, auth methods, etc.)
+          
+          ssh -vvv -o StrictHostKeyChecking=no -o ConnectTimeout=10 -i ~/.ssh/debug_key $USER@$HOST "echo '✅ LOGIN SUCCESSFUL: Server is accepting keys properly.'"
