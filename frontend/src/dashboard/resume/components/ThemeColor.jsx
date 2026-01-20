@@ -42,8 +42,10 @@ function ThemeColor() {
   return (
     <Popover>
   <PopoverTrigger asChild>
-  <Button variant="outline" size="sm" 
-          className="flex gap-2" > <LayoutGrid/> Theme</Button>
+  <button className="flex items-center gap-2 px-4 h-10 border border-[#ead2cd] dark:border-[#3d2a26] text-sm font-bold uppercase tracking-wider hover:bg-background-light dark:hover:bg-background-dark bg-white dark:bg-[#1d0f0c] text-[#1d0f0c] dark:text-[#fcf9f8] transition-colors rounded-sm">
+      <span className="material-symbols-outlined text-[20px]">palette</span>
+      <span>Change Theme</span>
+  </button>
   </PopoverTrigger>
   <PopoverContent>
     <h2 className='mb-2 text-sm font-bold'>Select Theme Color</h2>

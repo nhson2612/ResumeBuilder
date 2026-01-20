@@ -15,40 +15,17 @@ import AIResumeBuilder from './AIResumeBuilder';
 import InterviewPrep from './InterviewPrep';
 import { useTranslation } from 'react-i18next';
 
-function FormSection() {
-  const [activeFormIndex, setActiveFormIndex] = useState(1);
-  const [enableNext, setEnableNext] = useState(true);
+function FormSection({ activeFormIndex, onEnableNext }) {
   const { resumeId } = useParams();
   const { t } = useTranslation();
+
   return (
     <div>
-      <div className='flex justify-between items-center'>
-        <div className='flex gap-2 flex-wrap'>
-          <Link to={"/dashboard"}>
-            <Button><Home /></Button>
-          </Link>
-          <ThemeColor />
-          <TemplateSelector />
-          <AIResumeBuilder />
-          <InterviewPrep />
-        </div>
-        <div className='flex gap-2'>
-          {activeFormIndex > 1
-            && <Button size="sm" aria-label={t('common.back')}
-              onClick={() => setActiveFormIndex(activeFormIndex - 1)}> <ArrowLeft /> </Button>}
-          <Button
-            disabled={!enableNext}
-            className="flex gap-2" size="sm"
-            onClick={() => setActiveFormIndex(activeFormIndex + 1)}
-          > {t('common.next')}
-            <ArrowRight /> </Button>
-        </div>
-      </div>
       {/* Personal Detail  */}
       {activeFormIndex == 1 ?
-        <PersonalDetail enabledNext={(v) => setEnableNext(v)} />
+        <PersonalDetail enabledNext={(v) => onEnableNext(v)} />
         : activeFormIndex == 2 ?
-          <Summery enabledNext={(v) => setEnableNext(v)} />
+          <Summery enabledNext={(v) => onEnableNext(v)} />
           : activeFormIndex == 3 ?
             <Experience />
             : activeFormIndex == 4 ?
@@ -61,11 +38,8 @@ function FormSection() {
                     <Certifications />
                     : activeFormIndex == 8 ?
                       <Navigate to={'/my-resume/' + resumeId + "/view"} />
-
                       : null
       }
-
-
     </div>
   )
 }

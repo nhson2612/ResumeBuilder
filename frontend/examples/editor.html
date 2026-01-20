@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>AiCV Builder - Split Editor &amp; Preview</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#fe512a",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#23130f",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .grid-bg {
+            background-image: radial-gradient(#ead2cd 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #ead2cd;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-[#1d0f0c] dark:text-[#fcf9f8] min-h-screen flex flex-col font-display overflow-hidden">
+    <!-- Top Navigation -->
+    <header
+        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#ead2cd] dark:border-[#3d2a26] bg-background-light dark:bg-background-dark px-6 py-3 z-20">
+        <div class="flex items-center gap-4 text-[#1d0f0c] dark:text-[#fcf9f8]">
+            <div class="size-6 text-primary">
+                <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z">
+                    </path>
+                </svg>
+            </div>
+            <h2 class="text-lg font-bold leading-tight tracking-tight uppercase italic">AiCV Builder</h2>
+        </div>
+        <div class="flex flex-1 justify-end gap-8">
+            <nav class="hidden md:flex items-center gap-9">
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+                <a class="text-primary text-sm font-bold" href="#">Editor</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="#">My Resumes</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Resources</a>
+            </nav>
+            <div class="flex gap-3 border-l border-[#ead2cd] dark:border-[#3d2a26] pl-8">
+                <button
+                    class="flex items-center justify-center size-10 bg-white dark:bg-black border border-[#ead2cd] dark:border-[#3d2a26] hover:bg-primary/10">
+                    <span class="material-symbols-outlined text-[20px]">notifications</span>
+                </button>
+                <div class="bg-center bg-no-repeat aspect-square bg-cover size-10 border border-[#ead2cd]"
+                    data-alt="User profile avatar"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCQuQ2PvQ0AAJR5Hw0T98nRb01eojkzM6b5UcTft3Hbw6VS5DhkGc68jPf_-lDwd7EvnCLwZh5X5g3qON_FHnBuNgRqrb8Hb1Dpbw2N9TnWQl5rMup4MKpYyhaOZrpF_xDDOO76rdk76zEmoCQRjvPZ4wRT16hK_AEK-mUvW0ZRsWwRBYqrbCLXH3be-LEc0vuFB-3yrL3QcRkpkPpssJz_pM8YO63YavZcGCVXrBvE0lgXUHhfgbbcBCslG_jT0vkl1XBajGC23uc");'>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Action Bar -->
+    <div
+        class="flex items-center justify-between px-6 py-2 border-b border-[#ead2cd] dark:border-[#3d2a26] bg-white dark:bg-[#1d0f0c] z-10">
+        <div class="flex gap-2">
+            <button
+                class="flex items-center gap-2 px-4 h-10 border border-[#ead2cd] dark:border-[#3d2a26] text-sm font-bold uppercase tracking-wider hover:bg-background-light dark:hover:bg-background-dark">
+                <span class="material-symbols-outlined text-[20px]">palette</span>
+                <span>Change Theme</span>
+            </button>
+            <button
+                class="flex items-center gap-2 px-4 h-10 border border-[#ead2cd] dark:border-[#3d2a26] text-sm font-bold uppercase tracking-wider hover:bg-background-light dark:hover:bg-background-dark">
+                <span class="material-symbols-outlined text-[20px]">dashboard_customize</span>
+                <span>Change Template</span>
+            </button>
+        </div>
+        <button
+            class="flex items-center gap-2 px-6 h-10 bg-primary text-white text-sm font-bold uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all">
+            <span class="material-symbols-outlined text-[20px] fill-[1]">mic</span>
+            <span>Start Mock Interview</span>
+        </button>
+    </div>
+    <!-- Main Workspace -->
+    <main class="flex flex-1 overflow-hidden">
+        <!-- Left Column: Form Editor -->
+        <div class="w-[45%] flex flex-col bg-white dark:bg-[#150a08] border-r border-[#ead2cd] dark:border-[#3d2a26]">
+            <!-- Progress Stepper -->
+            <div class="p-6 border-b border-[#ead2cd] dark:border-[#3d2a26]">
+                <div class="flex flex-col gap-3">
+                    <div class="flex justify-between items-end">
+                        <span class="text-xs font-bold uppercase tracking-[0.2em] text-primary">Stage 01 / 04</span>
+                        <span class="text-sm font-bold">25% Complete</span>
+                    </div>
+                    <div class="h-1.5 w-full bg-[#ead2cd] dark:bg-[#3d2a26]">
+                        <div class="h-full bg-primary" style="width: 25%;"></div>
+                    </div>
+                    <div class="flex justify-between text-[10px] font-bold uppercase tracking-tighter opacity-60">
+                        <span class="text-primary">Personal Info</span>
+                        <span>Experience</span>
+                        <span>Education</span>
+                        <span>Skills</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Scrollable Form Area -->
+            <div class="flex-1 overflow-y-auto custom-scrollbar p-8 space-y-8">
+                <section>
+                    <h3 class="text-xl font-bold uppercase mb-6 flex items-center gap-3">
+                        <span
+                            class="size-6 bg-primary text-white text-xs flex items-center justify-center italic">01</span>
+                        Personal Information
+                    </h3>
+                    <div class="grid grid-cols-1 gap-6">
+                        <label class="flex flex-col gap-2">
+                            <span
+                                class="text-xs font-bold uppercase tracking-wider text-[#a15645] dark:text-[#bc7b6c]">Full
+                                Name</span>
+                            <input
+                                class="h-12 px-4 bg-background-light dark:bg-background-dark border border-[#ead2cd] dark:border-[#3d2a26] focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:opacity-50"
+                                placeholder="e.g. Alex Rivera" type="text" value="Alex Rivera" />
+                        </label>
+                        <div class="grid grid-cols-2 gap-4">
+                            <label class="flex flex-col gap-2">
+                                <span
+                                    class="text-xs font-bold uppercase tracking-wider text-[#a15645] dark:text-[#bc7b6c]">Professional
+                                    Title</span>
+                                <input
+                                    class="h-12 px-4 bg-background-light dark:bg-background-dark border border-[#ead2cd] dark:border-[#3d2a26] focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:opacity-50"
+                                    placeholder="e.g. Senior UX Designer" type="text" value="Senior Product Designer" />
+                            </label>
+                            <label class="flex flex-col gap-2">
+                                <span
+                                    class="text-xs font-bold uppercase tracking-wider text-[#a15645] dark:text-[#bc7b6c]">Location</span>
+                                <input
+                                    class="h-12 px-4 bg-background-light dark:bg-background-dark border border-[#ead2cd] dark:border-[#3d2a26] focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:opacity-50"
+                                    placeholder="e.g. New York, NY" type="text" value="San Francisco, CA" />
+                            </label>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <label class="flex flex-col gap-2">
+                                <span
+                                    class="text-xs font-bold uppercase tracking-wider text-[#a15645] dark:text-[#bc7b6c]">Email
+                                    Address</span>
+                                <input
+                                    class="h-12 px-4 bg-background-light dark:bg-background-dark border border-[#ead2cd] dark:border-[#3d2a26] focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:opacity-50"
+                                    placeholder="alex@example.com" type="email" value="alex.rivera@design.co" />
+                            </label>
+                            <label class="flex flex-col gap-2">
+                                <span
+                                    class="text-xs font-bold uppercase tracking-wider text-[#a15645] dark:text-[#bc7b6c]">Phone
+                                    Number</span>
+                                <input
+                                    class="h-12 px-4 bg-background-light dark:bg-background-dark border border-[#ead2cd] dark:border-[#3d2a26] focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:opacity-50"
+                                    placeholder="+1 (555) 000-0000" type="tel" />
+                            </label>
+                        </div>
+                        <label class="flex flex-col gap-2">
+                            <span
+                                class="text-xs font-bold uppercase tracking-wider text-[#a15645] dark:text-[#bc7b6c]">Professional
+                                Summary</span>
+                            <textarea
+                                class="p-4 bg-background-light dark:bg-background-dark border border-[#ead2cd] dark:border-[#3d2a26] focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:opacity-50"
+                                placeholder="Briefly describe your expertise..."
+                                rows="4">Passionate Product Designer with 8+ years of experience in building scalable design systems and user-centric web applications. Proven track record of improving user engagement by 40% through iterative UI/UX improvements.</textarea>
+                        </label>
+                    </div>
+                </section>
+            </div>
+            <!-- Sticky Form Footer -->
+            <div
+                class="p-6 border-t border-[#ead2cd] dark:border-[#3d2a26] bg-white dark:bg-[#150a08] flex justify-between gap-4">
+                <button
+                    class="px-8 h-12 border border-[#ead2cd] dark:border-[#3d2a26] font-bold uppercase tracking-widest hover:bg-background-light dark:hover:bg-background-dark opacity-50 cursor-not-allowed">
+                    Back
+                </button>
+                <button
+                    class="flex-1 bg-primary text-white font-bold uppercase tracking-widest h-12 hover:brightness-110 flex items-center justify-center gap-2">
+                    Save &amp; Next Section
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+        <!-- Right Column: Live Preview -->
+        <div
+            class="flex-1 grid-bg flex flex-col items-center overflow-y-auto custom-scrollbar p-12 bg-background-light dark:bg-background-dark">
+            <div
+                class="w-full max-w-[800px] bg-white shadow-[20px_20px_0px_#ead2cd] dark:shadow-[20px_20px_0px_#1d0f0c] min-h-[1131px] p-16 flex flex-col text-black">
+                <!-- Resume Header -->
+                <div class="border-b-4 border-black pb-8 mb-8">
+                    <h1 class="text-5xl font-black uppercase tracking-tighter mb-2 italic">Alex Rivera</h1>
+                    <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm font-bold uppercase tracking-tight">
+                        <span class="flex items-center gap-1"><span
+                                class="material-symbols-outlined text-sm">mail</span> alex.rivera@design.co</span>
+                        <span class="flex items-center gap-1"><span
+                                class="material-symbols-outlined text-sm">location_on</span> San Francisco, CA</span>
+                        <span class="flex items-center gap-1"><span
+                                class="material-symbols-outlined text-sm">link</span> linkedin.com/in/arivera</span>
+                    </div>
+                </div>
+                <!-- Resume Body -->
+                <div class="grid grid-cols-12 gap-12">
+                    <div class="col-span-12">
+                        <h2 class="text-xs font-black uppercase tracking-[0.3em] text-primary mb-4">Summary</h2>
+                        <p class="text-base leading-relaxed mb-10 border-l-2 border-primary/20 pl-6">
+                            Passionate Product Designer with 8+ years of experience in building scalable design systems
+                            and user-centric web applications. Proven track record of improving user engagement by 40%
+                            through iterative UI/UX improvements.
+                        </p>
+                    </div>
+                    <div class="col-span-8 space-y-10">
+                        <section>
+                            <h2 class="text-xs font-black uppercase tracking-[0.3em] text-primary mb-6">Experience</h2>
+                            <div class="space-y-8">
+                                <div class="relative pl-6 border-l border-black/10">
+                                    <div class="absolute -left-1.5 top-0 size-3 bg-black"></div>
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h3 class="font-bold text-lg uppercase leading-none">Senior Product Designer
+                                        </h3>
+                                        <span class="text-xs font-bold bg-black text-white px-2 py-1">2021 —
+                                            PRESENT</span>
+                                    </div>
+                                    <p class="text-sm font-bold text-primary uppercase mb-3">TechFlow Systems</p>
+                                    <ul class="text-sm space-y-2 list-disc list-inside opacity-80">
+                                        <li>Led the redesign of the core SaaS platform, resulting in a 25% increase in
+                                            daily active users.</li>
+                                        <li>Established a comprehensive design system used across 4 cross-functional
+                                            teams.</li>
+                                        <li>Mentored junior designers and implemented a new design review process.</li>
+                                    </ul>
+                                </div>
+                                <div class="relative pl-6 border-l border-black/10">
+                                    <div class="absolute -left-1.5 top-0 size-3 bg-black"></div>
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h3 class="font-bold text-lg uppercase leading-none">UX/UI Designer</h3>
+                                        <span class="text-xs font-bold bg-gray-200 px-2 py-1">2018 — 2021</span>
+                                    </div>
+                                    <p class="text-sm font-bold text-primary uppercase mb-3">Creative Pulse Agency</p>
+                                    <ul class="text-sm space-y-2 list-disc list-inside opacity-80">
+                                        <li>Designed end-to-end mobile experiences for Fortune 500 clients in the
+                                            fintech sector.</li>
+                                        <li>Conducted over 50+ user testing sessions to validate complex feature
+                                            workflows.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-span-4 space-y-10">
+                        <section>
+                            <h2 class="text-xs font-black uppercase tracking-[0.3em] text-primary mb-6">Skills</h2>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 border border-black text-[10px] font-bold uppercase">Figma</span>
+                                <span class="px-2 py-1 border border-black text-[10px] font-bold uppercase">React</span>
+                                <span
+                                    class="px-2 py-1 border border-black text-[10px] font-bold uppercase">Tailwind</span>
+                                <span class="px-2 py-1 border border-black text-[10px] font-bold uppercase">System
+                                    Design</span>
+                                <span class="px-2 py-1 border border-black text-[10px] font-bold uppercase">User
+                                    Research</span>
+                                <span
+                                    class="px-2 py-1 border border-black text-[10px] font-bold uppercase">Prototyping</span>
+                            </div>
+                        </section>
+                        <section>
+                            <h2 class="text-xs font-black uppercase tracking-[0.3em] text-primary mb-6">Education</h2>
+                            <div class="space-y-4">
+                                <div>
+                                    <h3 class="text-sm font-bold uppercase">BFA in Graphic Design</h3>
+                                    <p class="text-xs opacity-60">Rhode Island School of Design</p>
+                                    <p class="text-[10px] font-black mt-1">CLASS OF 2018</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="mt-auto pt-20 flex justify-between items-end">
+                    <div class="size-8 bg-primary"></div>
+                    <p class="text-[10px] font-bold tracking-widest opacity-30 uppercase italic">Generated by AiCV
+                        Builder Pro</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Side Toggle Panel (Left Navigation) -->
+    <aside class="fixed left-0 top-1/2 -translate-y-1/2 flex flex-col gap-1 z-30 pointer-events-none">
+        <div class="pointer-events-auto flex flex-col gap-1 bg-black p-1 shadow-xl">
+            <button class="size-10 flex items-center justify-center text-white bg-primary">
+                <span class="material-symbols-outlined">edit_note</span>
+            </button>
+            <button class="size-10 flex items-center justify-center text-white/50 hover:text-white hover:bg-white/10">
+                <span class="material-symbols-outlined">visibility</span>
+            </button>
+            <button class="size-10 flex items-center justify-center text-white/50 hover:text-white hover:bg-white/10">
+                <span class="material-symbols-outlined">download</span>
+            </button>
+            <button class="size-10 flex items-center justify-center text-white/50 hover:text-white hover:bg-white/10">
+                <span class="material-symbols-outlined">share</span>
+            </button>
+        </div>
+    </aside>
+</body>
+
+</html>

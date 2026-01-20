@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>AiCV Optimizer - AI Workflow Landing Page</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#fe512a",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#23130f",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .angular-pattern {
+            background-color: #f8f6f5;
+            background-image: linear-gradient(30deg, #ece9e7 12%, transparent 12.5%, transparent 87%, #ece9e7 87.5%, #ece9e7), linear-gradient(150deg, #ece9e7 12%, transparent 12.5%, transparent 87%, #ece9e7 87.5%, #ece9e7), linear-gradient(30deg, #ece9e7 12%, transparent 12.5%, transparent 87%, #ece9e7 87.5%, #ece9e7), linear-gradient(150deg, #ece9e7 12%, transparent 12.5%, transparent 87%, #ece9e7 87.5%, #ece9e7), linear-gradient(60deg, #ece9e777 25%, transparent 25.5%, transparent 75%, #ece9e777 75%, #ece9e777), linear-gradient(60deg, #ece9e777 25%, transparent 25.5%, transparent 75%, #ece9e777 75%, #ece9e777);
+            background-size: 80px 140px;
+            background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-[#1d0f0c] dark:text-[#fcf9f8] selection:bg-primary selection:text-white">
+    <!-- Top Navigation Bar -->
+    <header
+        class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-solid border-[#ead2cd] dark:border-[#3a2621]">
+        <div class="max-w-[1280px] mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="text-primary">
+                    <span class="material-symbols-outlined text-4xl leading-none">biotech</span>
+                </div>
+                <h2 class="text-xl font-bold leading-tight tracking-tight uppercase">AiCV Optimizer</h2>
+            </div>
+            <nav class="hidden md:flex items-center gap-10">
+                <a class="text-sm font-semibold hover:text-primary transition-colors uppercase tracking-widest"
+                    href="#">Workflow</a>
+                <a class="text-sm font-semibold hover:text-primary transition-colors uppercase tracking-widest"
+                    href="#">Simulations</a>
+                <a class="text-sm font-semibold hover:text-primary transition-colors uppercase tracking-widest"
+                    href="#">Pricing</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a class="text-sm font-bold uppercase tracking-widest px-4" href="#">Login</a>
+                <button
+                    class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded font-bold uppercase tracking-widest text-xs flex items-center gap-2">
+                    Get Started <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="relative">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 angular-pattern opacity-30 pointer-events-none"></div>
+        <!-- Hero Section -->
+        <section class="relative pt-20 pb-16 px-6 overflow-hidden">
+            <div class="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="flex flex-col gap-8">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded w-fit">
+                        <span class="material-symbols-outlined text-sm">bolt</span>
+                        <span class="text-[10px] font-bold uppercase tracking-[0.2em]">Next-Gen Career
+                            Optimization</span>
+                    </div>
+                    <h1
+                        class="text-6xl md:text-7xl font-black leading-[0.9] tracking-tighter uppercase text-[#1d0f0c] dark:text-white">
+                        Optimize your <br /><span class="text-primary italic">career</span> at the speed of AI.
+                    </h1>
+                    <p class="text-lg text-[#a15645] dark:text-[#ead2cd] max-w-md font-medium leading-relaxed">
+                        Transform your legacy CV through our precision AI lens and outpace the competition with
+                        real-time matching and simulation.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <button
+                            class="bg-primary text-white px-8 py-5 rounded font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-3">
+                            Start Optimizing <span class="material-symbols-outlined">center_focus_strong</span>
+                        </button>
+                        <button
+                            class="border-2 border-[#1d0f0c] dark:border-white text-[#1d0f0c] dark:text-white px-8 py-5 rounded font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-3">
+                            Watch Demo <span class="material-symbols-outlined">play_circle</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <div class="absolute -inset-4 bg-primary/5 rounded-xl border border-primary/10 -rotate-1"></div>
+                    <div
+                        class="relative bg-white dark:bg-[#1d0f0c] border-2 border-[#1d0f0c] dark:border-[#ead2cd] p-6 shadow-2xl">
+                        <!-- Simulated AI Scanning Effect -->
+                        <div
+                            class="absolute top-0 left-0 w-full h-1 bg-primary animate-pulse z-10 shadow-[0_0_15px_rgba(254,81,42,0.8)]">
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <div class="h-8 w-3/4 bg-[#f4e9e6] dark:bg-[#3a2621] rounded"></div>
+                            <div class="grid grid-cols-3 gap-4">
+                                <div class="h-4 bg-primary/20 rounded"></div>
+                                <div class="h-4 bg-primary/40 rounded"></div>
+                                <div class="h-4 bg-primary/60 rounded"></div>
+                            </div>
+                            <div class="space-y-3 pt-4 border-t border-[#ead2cd] dark:border-[#3a2621]">
+                                <div class="flex justify-between items-end">
+                                    <div class="space-y-2 w-2/3">
+                                        <div class="h-3 w-full bg-[#ead2cd] dark:bg-[#3a2621] rounded"></div>
+                                        <div class="h-3 w-4/5 bg-[#ead2cd] dark:bg-[#3a2621] rounded"></div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-primary font-black text-4xl">98%</div>
+                                        <div class="text-[10px] uppercase font-bold tracking-widest">Match Score</div>
+                                    </div>
+                                </div>
+                                <div class="h-[200px] w-full bg-cover bg-center rounded border border-[#ead2cd] dark:border-[#3a2621]"
+                                    data-alt="Visual representation of a CV being scanned by digital orange lines"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAO2xkeG-ZzGQN6mXa1XQTK8v04WI9GXWKkKqOnV5l9tSi1hAt6AdQEg3AYdaKLiMH6NyPe31KU6vFm_7-peS46JngBVC04KuJ94-8GfpNO57PYdt9GfigeM8w1bbocPyeEDYGaUuQiYzItuiA1JCrF8UI2yEEoN3bneBLD-xGaE1RF2INrRJRuwXK97tzlTfR3JKqe3e3ZOFpbzVSZJMzTXyhV4g8etRMtbxh68QItIT31Qbkc3qr09Q92bpUyEPnJG1hqv4bq2fc");'>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Feature Section: Workflow -->
+        <section class="py-24 px-6 bg-[#fcf9f8] dark:bg-[#1d0f0c] border-y border-[#ead2cd] dark:border-[#3a2621]">
+            <div class="max-w-[1280px] mx-auto">
+                <div class="mb-20">
+                    <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-4">The AI Career <span
+                            class="text-primary italic">Workflow</span></h2>
+                    <p class="text-[#a15645] dark:text-[#ead2cd] font-medium max-w-xl">Three distinct technical phases
+                        designed to calibrate your profile and dominate the application pipeline.</p>
+                </div>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-3 gap-1px bg-[#ead2cd] dark:bg-[#3a2621] border border-[#ead2cd] dark:border-[#3a2621]">
+                    <!-- Feature 1 -->
+                    <div
+                        class="bg-white dark:bg-background-dark p-10 flex flex-col gap-6 group hover:bg-primary transition-all duration-300">
+                        <div
+                            class="size-14 bg-primary/10 text-primary flex items-center justify-center rounded group-hover:bg-white group-hover:text-primary transition-colors">
+                            <span class="material-symbols-outlined text-3xl">target</span>
+                        </div>
+                        <h3 class="text-xl font-bold uppercase tracking-tight group-hover:text-white">JD AI Matching
+                        </h3>
+                        <p class="text-[#a15645] dark:text-[#ead2cd] text-sm leading-relaxed group-hover:text-white/80">
+                            Reverse-engineer job descriptions with 99.8% precision. Our AI identifies semantic gaps in
+                            your experience and offers instant calibration suggestions.
+                        </p>
+                        <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded mt-4 filter grayscale group-hover:grayscale-0 transition-all border border-[#ead2cd] dark:border-[#3a2621]"
+                            data-alt="Interface showing job description comparison with CV score"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDr1VuN4pWYL0H8BLvoT-1dvebBG0eeIvJ6OqU54_SzNs18o5SRHhxdqZdCHfFZ9mXa0UsZNxSo7uQfKC435z3IgpjGjQkO7MI6AC7VfpUORS0V3WOwO3b_9QtFLfS1UdA-uGPznXYLOWvH91WSAWArL1XftVI61GnTltGT08INcvh3AhHiOwnOZn99CPRcx1sxdYr3g32Q_yKBSPSlePTk-vbhyYHJ1270zgxTNn02i8KsZ6_nZ52vHj3OY4mXeYk_JHmCwNcgQac");'>
+                        </div>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div
+                        class="bg-white dark:bg-background-dark p-10 flex flex-col gap-6 group hover:bg-primary transition-all duration-300">
+                        <div
+                            class="size-14 bg-primary/10 text-primary flex items-center justify-center rounded group-hover:bg-white group-hover:text-primary transition-colors">
+                            <span class="material-symbols-outlined text-3xl">keyboard_voice</span>
+                        </div>
+                        <h3 class="text-xl font-bold uppercase tracking-tight group-hover:text-white">Mock Interviews
+                        </h3>
+                        <p class="text-[#a15645] dark:text-[#ead2cd] text-sm leading-relaxed group-hover:text-white/80">
+                            Train with the same models hiring managers use. Real-time audio waveform analysis evaluates
+                            your confidence, pacing, and technical accuracy.
+                        </p>
+                        <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded mt-4 filter grayscale group-hover:grayscale-0 transition-all border border-[#ead2cd] dark:border-[#3a2621]"
+                            data-alt="Audio waveform visualization for interview training"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBbAwRg1Fm_Z85TiidkVXq7zyN2OBaLyDEtWvNzBw807FeM6NafYZF3srLr-Dz71r_lmZwWC_9xHM7CRbnSCU0hukBJSIq8ARUwHJZWJgdJhnAWY0vEyEHPZ_pBt0jKRfaH6OFzgnV1PalfjDBkSFCk90hlG_XzHkBzCbJDRRCsz6vXlEABhhwyV8WditpREphYl8RKUm7eb7AMtiea0OmXB0dzIzDzgwSDxhQOhoUk0fS2SK2DG2Epw-sp1ITsMxvd_IhXKQ7fxPU");'>
+                        </div>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div
+                        class="bg-white dark:bg-background-dark p-10 flex flex-col gap-6 group hover:bg-primary transition-all duration-300">
+                        <div
+                            class="size-14 bg-primary/10 text-primary flex items-center justify-center rounded group-hover:bg-white group-hover:text-primary transition-colors">
+                            <span class="material-symbols-outlined text-3xl">view_kanban</span>
+                        </div>
+                        <h3 class="text-xl font-bold uppercase tracking-tight group-hover:text-white">Sharp Kanban</h3>
+                        <p class="text-[#a15645] dark:text-[#ead2cd] text-sm leading-relaxed group-hover:text-white/80">
+                            Centralize the chaos. A high-performance tracking system for every stage of your pipeline
+                            with automated follow-up triggers.
+                        </p>
+                        <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded mt-4 filter grayscale group-hover:grayscale-0 transition-all border border-[#ead2cd] dark:border-[#3a2621]"
+                            data-alt="Kanban board interface with application status cards"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBjswhLtvOd_mUwS2aavFGaKyIds8hkM0-RkuTCOHFCcROlYZZoYSkEnumy80T6hN0WDxWQL5UVhzMDxqwnKkVCPts6hQhWdTY6HfOP_FFRRc0Yxra6b_OEisBkcl_uHFB3XpDvdIthjVVP_RrkQ5o7tl9v0xJbUOw80z6cCUUce0GfG3VnWRXBwRG2rnL0RDZANZ5uHLQNZsbrv1uXigpR2JoFrLVCcyeusfnsy49Ee9zV9WHbEAOkhF0LlGqmBRMBw7qDBzDmzX0");'>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Pipeline Table Section -->
+        <section class="py-24 px-6">
+            <div class="max-w-[1280px] mx-auto">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                    <div>
+                        <h2 class="text-4xl font-black uppercase tracking-tighter">Application Pipeline</h2>
+                        <p class="text-[#a15645] dark:text-[#ead2cd] font-medium mt-2">Live tracking of active
+                            optimization cycles.</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <button
+                            class="px-4 py-2 bg-white dark:bg-[#1d0f0c] border border-[#ead2cd] dark:border-[#3a2621] font-bold text-xs uppercase tracking-widest rounded flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm">filter_list</span> Filter
+                        </button>
+                        <button
+                            class="px-4 py-2 bg-primary text-white font-bold text-xs uppercase tracking-widest rounded flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm">add</span> New Application
+                        </button>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-[#1d0f0c] border-2 border-[#1d0f0c] dark:border-[#ead2cd] shadow-[8px_8px_0px_0px_#fe512a]">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead>
+                                <tr class="border-b-2 border-[#1d0f0c] dark:border-[#ead2cd]">
+                                    <th class="px-8 py-5 text-xs font-black uppercase tracking-[0.2em]">Target Company
+                                    </th>
+                                    <th class="px-8 py-5 text-xs font-black uppercase tracking-[0.2em]">Position</th>
+                                    <th class="px-8 py-5 text-xs font-black uppercase tracking-[0.2em]">Status</th>
+                                    <th class="px-8 py-5 text-xs font-black uppercase tracking-[0.2em]">Optimization
+                                    </th>
+                                    <th class="px-8 py-5 text-xs font-black uppercase tracking-[0.2em] text-right">
+                                        Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-[#ead2cd] dark:divide-[#3a2621]">
+                                <tr class="hover:bg-primary/5 transition-colors group">
+                                    <td class="px-8 py-6">
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="size-8 bg-[#1d0f0c] rounded-sm flex items-center justify-center text-white font-bold">
+                                                G</div>
+                                            <span class="font-bold">Google Cloud</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-8 py-6 font-medium text-[#a15645] dark:text-[#ead2cd]">Senior Product
+                                        Designer</td>
+                                    <td class="px-8 py-6">
+                                        <span
+                                            class="bg-[#f4e9e6] dark:bg-[#3a2621] px-3 py-1 text-[10px] font-black uppercase tracking-widest rounded-full">Interviewing</span>
+                                    </td>
+                                    <td class="px-8 py-6">
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="flex-1 h-1.5 bg-[#ead2cd] dark:bg-[#3a2621] rounded-full overflow-hidden">
+                                                <div class="h-full bg-primary" style="width: 85%"></div>
+                                            </div>
+                                            <span class="text-xs font-bold font-mono">85%</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-8 py-6 text-right">
+                                        <button
+                                            class="text-primary material-symbols-outlined hover:scale-110 transition-transform">open_in_new</button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-primary/5 transition-colors group">
+                                    <td class="px-8 py-6">
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="size-8 bg-[#1d0f0c] rounded-sm flex items-center justify-center text-white font-bold">
+                                                S</div>
+                                            <span class="font-bold">Stripe Payments</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-8 py-6 font-medium text-[#a15645] dark:text-[#ead2cd]">Staff Engineer
+                                    </td>
+                                    <td class="px-8 py-6">
+                                        <span
+                                            class="bg-primary/20 text-primary px-3 py-1 text-[10px] font-black uppercase tracking-widest rounded-full">To
+                                            Apply</span>
+                                    </td>
+                                    <td class="px-8 py-6">
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="flex-1 h-1.5 bg-[#ead2cd] dark:bg-[#3a2621] rounded-full overflow-hidden">
+                                                <div class="h-full bg-primary" style="width: 22%"></div>
+                                            </div>
+                                            <span class="text-xs font-bold font-mono">22%</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-8 py-6 text-right">
+                                        <button
+                                            class="text-primary material-symbols-outlined hover:scale-110 transition-transform">open_in_new</button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-primary/5 transition-colors group">
+                                    <td class="px-8 py-6">
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="size-8 bg-[#1d0f0c] rounded-sm flex items-center justify-center text-white font-bold">
+                                                V</div>
+                                            <span class="font-bold">Vercel Inc.</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-8 py-6 font-medium text-[#a15645] dark:text-[#ead2cd]">UI Architect
+                                    </td>
+                                    <td class="px-8 py-6">
+                                        <span
+                                            class="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 px-3 py-1 text-[10px] font-black uppercase tracking-widest rounded-full">Offered</span>
+                                    </td>
+                                    <td class="px-8 py-6">
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="flex-1 h-1.5 bg-[#ead2cd] dark:bg-[#3a2621] rounded-full overflow-hidden">
+                                                <div class="h-full bg-green-500" style="width: 100%"></div>
+                                            </div>
+                                            <span class="text-xs font-bold font-mono">100%</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-8 py-6 text-right">
+                                        <button
+                                            class="text-primary material-symbols-outlined hover:scale-110 transition-transform">open_in_new</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA Section -->
+        <section class="py-24 px-6 overflow-hidden">
+            <div class="max-w-[1280px] mx-auto bg-primary text-white p-12 lg:p-20 relative">
+                <div class="absolute right-0 top-0 h-full w-1/3 opacity-10 pointer-events-none">
+                    <span class="material-symbols-outlined text-[300px] leading-none -mr-20 -mt-20">rocket_launch</span>
+                </div>
+                <div class="relative z-10 max-w-2xl flex flex-col gap-8">
+                    <h2 class="text-5xl md:text-6xl font-black uppercase tracking-tighter leading-none">Ready to upgrade
+                        <br />your trajectory?</h2>
+                    <p class="text-lg font-medium text-white/80">Join 50,000+ professionals who have already calibrated
+                        their career with AiCV.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <input
+                            class="flex-1 bg-white/10 border-2 border-white/30 rounded px-6 py-4 font-bold uppercase tracking-widest text-white placeholder:text-white/50 focus:border-white focus:outline-none focus:ring-0"
+                            placeholder="ENTER WORK EMAIL" type="email" />
+                        <button
+                            class="bg-white text-primary px-10 py-4 rounded font-black uppercase tracking-[0.2em] text-sm hover:scale-105 transition-transform">Get
+                            Access Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-background-dark border-t border-[#ead2cd] dark:border-[#3a2621] py-16 px-6">
+        <div class="max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between gap-12">
+            <div class="flex flex-col gap-6 max-w-xs">
+                <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary text-3xl">biotech</span>
+                    <h2 class="text-lg font-bold uppercase tracking-widest">AiCV Optimizer</h2>
+                </div>
+                <p class="text-xs text-[#a15645] dark:text-[#ead2cd] font-medium leading-relaxed">
+                    Precision engineering for the modern professional. Built on advanced neural architectures to ensure
+                    your talent meets the right opportunity.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-primary">Platform</h4>
+                    <a class="text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors"
+                        href="#">Features</a>
+                    <a class="text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors"
+                        href="#">Integrations</a>
+                    <a class="text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors"
+                        href="#">Security</a>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-primary">Company</h4>
+                    <a class="text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors"
+                        href="#">About Us</a>
+                    <a class="text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors"
+                        href="#">Careers</a>
+                    <a class="text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors"
+                        href="#">Contact</a>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-primary">Legal</h4>
+                    <a class="text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors"
+                        href="#">Privacy</a>
+                    <a class="text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors"
+                        href="#">Terms</a>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-[1280px] mx-auto mt-16 pt-8 border-t border-[#ead2cd] dark:border-[#3a2621] flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-[10px] font-bold uppercase tracking-[0.1em] text-[#a15645] dark:text-[#ead2cd]">© 2024 AiCV
+                Optimizer. All Rights Reserved.</p>
+            <div class="flex gap-6">
+                <span
+                    class="material-symbols-outlined text-xl cursor-pointer hover:text-primary transition-colors">share</span>
+                <span
+                    class="material-symbols-outlined text-xl cursor-pointer hover:text-primary transition-colors">language</span>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -90,9 +90,10 @@ function TemplateSelector() {
     return (
         <Popover open={isOpen} onOpenChange={setIsOpen}>
             <PopoverTrigger asChild>
-                <Button variant="outline" size="sm" className="flex gap-2 hover:bg-primary/5 transition-all">
-                    <LayoutTemplate className="w-4 h-4" /> Template
-                </Button>
+                <button className="flex items-center gap-2 px-4 h-10 border border-[#ead2cd] dark:border-[#3d2a26] text-sm font-bold uppercase tracking-wider hover:bg-background-light dark:hover:bg-background-dark bg-white dark:bg-[#1d0f0c] text-[#1d0f0c] dark:text-[#fcf9f8] transition-colors rounded-sm">
+                    <span className="material-symbols-outlined text-[20px]">dashboard_customize</span>
+                    <span>Change Template</span>
+                </button>
             </PopoverTrigger>
             <PopoverContent className="w-80 p-4" align="start">
                 <div className="flex items-center gap-2 mb-4">

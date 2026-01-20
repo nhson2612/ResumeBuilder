@@ -14,14 +14,14 @@ jobs:
         working-directory: ./backend
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Use Node.js 18.x
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: 18.x
         cache: 'npm'
         cache-dependency-path: backend/package-lock.json
-    - run: npm install --legacy-peer-deps
+    - run: npm ci --legacy-peer-deps
     - run: npm test
       env:
         DATABASE_URL: ${{ secrets.DATABASE_URL }}
@@ -35,14 +35,14 @@ jobs:
         working-directory: ./frontend
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Use Node.js 18.x
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: 18.x
         cache: 'npm'
         cache-dependency-path: frontend/package-lock.json
-    - run: npm install
+    - run: npm ci
     - run: npm test -- --run # Force run once (not watch mode) for CI
       env:
         VITE_CLERK_PUBLISHABLE_KEY: ${{ secrets.VITE_CLERK_PUBLISHABLE_KEY }}
@@ -52,7 +52,7 @@ jobs:
     needs: [backend-tests, frontend-tests]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         # Disabling shallow clone is recommended for improving relevancy of reporting
         fetch-depth: 0

@@ -1,62 +1,51 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FileText, Facebook, Globe, Mail } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
 function Footer() {
     const { t } = useTranslation()
 
     return (
-        <footer className="bg-white dark:bg-background border-t border-gray-100 dark:border-gray-800 pt-16 pb-8">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
-                    <div className="col-span-2 lg:col-span-2">
-                        <div className="flex items-center gap-2 mb-6">
-                            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 text-primary">
-                                <FileText className="w-5 h-5" />
-                            </div>
-                            <span className="text-xl font-bold text-gray-900 dark:text-white">AI Resume Builder</span>
-                        </div>
-                        <p className="text-gray-500 text-sm max-w-xs mb-6">
-                            {t('footer.description')}
-                        </p>
-                        <div className="flex gap-4">
-                            <a className="text-gray-400 hover:text-primary transition-colors" href="#"><Facebook className="w-5 h-5" /></a>
-                            <a className="text-gray-400 hover:text-primary transition-colors" href="#"><Globe className="w-5 h-5" /></a>
-                            <a className="text-gray-400 hover:text-primary transition-colors" href="#"><Mail className="w-5 h-5" /></a>
-                        </div>
+        <footer className="bg-white dark:bg-background-dark border-t border-[#ead2cd] dark:border-[#3a2621] py-16 px-6 font-display">
+            <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between gap-12">
+                <div className="flex flex-col gap-6 max-w-xs">
+                    <div className="flex items-center gap-3">
+                        <span className="material-symbols-outlined text-primary text-3xl">biotech</span>
+                        <h2 className="text-lg font-bold uppercase tracking-widest text-[#1d0f0c] dark:text-[#fcf9f8]">AiCV Optimizer</h2>
                     </div>
-                    <div>
-                        <h4 className="font-bold text-gray-900 dark:text-white mb-4">{t('footer.products')}</h4>
-                        <ul className="space-y-3 text-sm text-gray-500">
-                            <li><a className="hover:text-primary transition-colors" href="#">{t('footer.features')}</a></li>
-                            <li><a className="hover:text-primary transition-colors" href="#">{t('footer.templates')}</a></li>
-                            <li><a className="hover:text-primary transition-colors" href="#">{t('footer.pricing')}</a></li>
-                        </ul>
+                    <p className="text-xs text-[#a15645] dark:text-[#ead2cd] font-medium leading-relaxed">
+                        {t('footer.description', 'Precision engineering for the modern professional. Built on advanced neural architectures to ensure your talent meets the right opportunity.')}
+                    </p>
+                </div>
+                
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-12">
+                    <div className="flex flex-col gap-4">
+                        <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-primary">Platform</h4>
+                        <a className="text-xs font-bold uppercase tracking-widest text-[#1d0f0c] dark:text-[#fcf9f8] hover:text-primary transition-colors" href="#">{t('footer.features', 'Features')}</a>
+                        <a className="text-xs font-bold uppercase tracking-widest text-[#1d0f0c] dark:text-[#fcf9f8] hover:text-primary transition-colors" href="#">{t('footer.integrations', 'Integrations')}</a>
+                        <a className="text-xs font-bold uppercase tracking-widest text-[#1d0f0c] dark:text-[#fcf9f8] hover:text-primary transition-colors" href="#">{t('footer.security', 'Security')}</a>
                     </div>
-                    <div>
-                        <h4 className="font-bold text-gray-900 dark:text-white mb-4">{t('footer.support')}</h4>
-                        <ul className="space-y-3 text-sm text-gray-500">
-                            <li><a className="hover:text-primary transition-colors" href="#">{t('footer.help')}</a></li>
-                            <li><a className="hover:text-primary transition-colors" href="#">{t('footer.contact')}</a></li>
-                            <li><a className="hover:text-primary transition-colors" href="#">{t('footer.privacy')}</a></li>
-                        </ul>
+                    
+                    <div className="flex flex-col gap-4">
+                        <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-primary">Company</h4>
+                        <Link className="text-xs font-bold uppercase tracking-widest text-[#1d0f0c] dark:text-[#fcf9f8] hover:text-primary transition-colors" to="/about-us">{t('footer.about', 'About Us')}</Link>
+                        <a className="text-xs font-bold uppercase tracking-widest text-[#1d0f0c] dark:text-[#fcf9f8] hover:text-primary transition-colors" href="#">{t('footer.careers', 'Careers')}</a>
+                        <a className="text-xs font-bold uppercase tracking-widest text-[#1d0f0c] dark:text-[#fcf9f8] hover:text-primary transition-colors" href="#">{t('footer.contact', 'Contact')}</a>
                     </div>
-                    <div>
-                        <h4 className="font-bold text-gray-900 dark:text-white mb-4">{t('footer.company')}</h4>
-                        <ul className="space-y-3 text-sm text-gray-500">
-                            <li><Link className="hover:text-primary transition-colors" to="/about-us">{t('footer.about')}</Link></li>
-                            <li><a className="hover:text-primary transition-colors" href="#">{t('footer.blog')}</a></li>
-                            <li><a className="hover:text-primary transition-colors" href="#">{t('footer.careers')}</a></li>
-                        </ul>
+                    
+                    <div className="flex flex-col gap-4">
+                        <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-primary">Legal</h4>
+                        <a className="text-xs font-bold uppercase tracking-widest text-[#1d0f0c] dark:text-[#fcf9f8] hover:text-primary transition-colors" href="#">{t('footer.privacy', 'Privacy')}</a>
+                        <a className="text-xs font-bold uppercase tracking-widest text-[#1d0f0c] dark:text-[#fcf9f8] hover:text-primary transition-colors" href="#">{t('footer.terms', 'Terms')}</a>
                     </div>
                 </div>
-                <div className="border-t border-gray-100 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-sm text-gray-400">© 2024 AI Resume Builder. All rights reserved.</p>
-                    <div className="flex gap-6 text-sm text-gray-400">
-                        <a className="hover:text-primary transition-colors" href="#">{t('footer.terms')}</a>
-                        <a className="hover:text-primary transition-colors" href="#">{t('footer.privacy')}</a>
-                    </div>
+            </div>
+            
+            <div className="max-w-[1280px] mx-auto mt-16 pt-8 border-t border-[#ead2cd] dark:border-[#3a2621] flex flex-col md:flex-row justify-between items-center gap-4">
+                <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-[#a15645] dark:text-[#ead2cd]">© 2024 AiCV Optimizer. All Rights Reserved.</p>
+                <div className="flex gap-6 text-[#1d0f0c] dark:text-[#fcf9f8]">
+                    <span className="material-symbols-outlined text-xl cursor-pointer hover:text-primary transition-colors">share</span>
+                    <span className="material-symbols-outlined text-xl cursor-pointer hover:text-primary transition-colors">language</span>
                 </div>
             </div>
         </footer>

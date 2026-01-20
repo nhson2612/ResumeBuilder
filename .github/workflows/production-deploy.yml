@@ -1,0 +1,204 @@
+name: Production Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+env:
+  REGISTRY: ghcr.io
+  # github.repository as <account>/<repo>
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  # =================================================================================
+  # 1. CI: Quality Assurance
+  # =================================================================================
+  ci:
+    name: 🧪 CI & Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+          
+      # Backend CI
+      - name: Install Backend Deps
+        working-directory: ./backend
+        run: npm ci
+        
+      - name: Test Backend
+        working-directory: ./backend
+        run: npm test
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }} 
+          GROQ_API_KEY: "mock-key-for-ci"
+          CLERK_SECRET_KEY: "mock-key-for-ci"
+
+      # Frontend CI
+      - name: Install Frontend Deps
+        working-directory: ./frontend
+        run: npm ci
+        
+      - name: Build Frontend
+        working-directory: ./frontend
+        run: npm run build
+        env:
+          VITE_CLERK_PUBLISHABLE_KEY: ${{ secrets.VITE_CLERK_PUBLISHABLE_KEY }}
+          VITE_BACKEND_URL: "/api/"
+
+  # =================================================================================
+  # 2. CD Part 1: Build & Push Artifacts
+  # =================================================================================
+  build-push:
+    name: Build & Push Docker
+    needs: ci
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    outputs:
+      image_tag: ${{ steps.meta.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Log in to the Container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Downcase Image Name
+        run: |
+          echo "IMAGE_NAME_LOWER=${IMAGE_NAME,,}" >> $GITHUB_ENV
+        env:
+          IMAGE_NAME: '${{ env.IMAGE_NAME }}'
+            
+      # Backend Build
+      - name: Extract metadata (Backend)
+        id: meta-be
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_LOWER }}/backend
+          tags: |
+            type=sha
+            type=ref,event=branch
+            latest
+            
+      - name: Build and push Backend
+        uses: docker/build-push-action@v5
+        with:
+          context: ./backend
+          push: true
+          tags: ${{ steps.meta-be.outputs.tags }}
+          labels: ${{ steps.meta-be.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      # Frontend Build
+      - name: Extract metadata (Frontend)
+        id: meta-fe
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_LOWER }}/frontend
+          tags: |
+            type=sha
+            type=ref,event=branch
+            latest
+
+      - name: Build and push Frontend
+        uses: docker/build-push-action@v5
+        with:
+          context: ./frontend
+          push: true
+          tags: ${{ steps.meta-fe.outputs.tags }}
+          labels: ${{ steps.meta-fe.outputs.labels }}
+          build-args: |
+            VITE_BACKEND_URL=/api/
+            VITE_CLERK_PUBLISHABLE_KEY=${{ secrets.VITE_CLERK_PUBLISHABLE_KEY }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  # =================================================================================
+  # 3. CD Part 2: Deploy to Production
+  # =================================================================================
+  deploy:
+    name: 🚀 Deploy to Production
+    needs: build-push
+    runs-on: ubuntu-latest
+    environment: 'production'
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.actor }}
+          REGISTRY: ${{ env.REGISTRY }}
+          # Pass variable to script
+          IMAGE_NAME: ${{ github.repository }} 
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_KEY }}
+          envs: GH_TOKEN,USERNAME,REGISTRY,IMAGE_NAME
+          script: |
+            export IMAGE_NAME_LOWER=$(echo $IMAGE_NAME | tr '[:upper:]' '[:lower:]')
+            echo "Deploying $IMAGE_NAME_LOWER..."
+            
+            echo $GH_TOKEN | docker login ghcr.io -u $USERNAME --password-stdin
+            
+            cd /home/ubuntu/AI-Resume-Builder
+            
+            cat <<EOF > docker-compose.prod.yml
+            version: '3.8'
+            services:
+              backend:
+                image: ghcr.io/$IMAGE_NAME_LOWER/backend:main
+                container_name: ai-resume-backend
+                ports:
+                  - "5000:5000"
+                env_file: .env
+                restart: always
+                
+              frontend:
+                image: ghcr.io/$IMAGE_NAME_LOWER/frontend:main
+                container_name: ai-resume-frontend
+                ports:
+                  - "80:80"
+                  - "443:443"
+                volumes:
+                  - /etc/letsencrypt:/etc/letsencrypt:ro
+                depends_on:
+                  - backend
+                restart: always
+            EOF
+            
+            echo "Pulling latest images..."
+            docker compose -f docker-compose.prod.yml pull
+            
+            echo "Recreating containers..."
+            docker compose -f docker-compose.prod.yml up -d
+            
+            docker image prune -f
+            
+            echo "🚀🚀🚀 Deployment Complete! 🔥🔥🔥"
+
+      - name: Health Check
+        run: |
+          echo "Waiting for service to stabilize..."
+          sleep 15
+          echo "Checking Backend Health..."
+          status_code=$(curl --write-out %{http_code} --silent --output /dev/null https://ai-resume-builder.nhson2612.space/api/health)
+          
+          if [[ "$status_code" -ne 200 ]] ; then
+            echo "❌ Health check failed with status $status_code"
+            exit 1
+          else
+            echo "✅ Health check passed!"
+          fi

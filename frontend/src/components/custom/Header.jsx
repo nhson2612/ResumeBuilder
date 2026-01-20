@@ -10,52 +10,56 @@ function Header() {
     const { t } = useTranslation();
 
     return (
-        <div className='p-3 px-5 flex justify-between shadow-md sticky top-0 z-50 w-full bg-white dark:bg-background'>
-            <Link to={'/'} className="flex items-center gap-2 text-primary cursor-pointer">
-                <div className="size-10 flex items-center justify-center overflow-hidden">
-                    <svg
-                        fill="none"
-                        viewBox="0 0 48 48"
-                        className="w-full h-full"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M12 4H30L42 16V44C42 45.1046 41.1046 46 40 46H12C10.8954 46 10 45.1046 10 44V6C10 4.89543 10.8954 4 12 4Z"
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="4"
-                        ></path>
-                    </svg>
-                </div>
-                <h2 className="text-primary text-xl font-bold leading-tight tracking-[-0.015em]">
-                    AI Resume Builder
-                </h2>
-            </Link>
-            <div className='flex gap-2 items-center'>
-                <Link to={'/about-us'}>
-                    <Button variant="ghost">{t('common.about')}</Button>
+        <header className="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-solid border-[#ead2cd] dark:border-[#3a2621] font-display">
+            <div className="max-w-[1280px] mx-auto px-6 py-4 flex items-center justify-between">
+                <Link to={'/'} className="flex items-center gap-3 group">
+                    <div className="text-primary transition-transform group-hover:rotate-12">
+                        <span className="material-symbols-outlined text-4xl leading-none">biotech</span>
+                    </div>
+                    <h2 className="text-xl font-bold leading-tight tracking-tight uppercase text-[#1d0f0c] dark:text-[#fcf9f8]">
+                        AiCV Optimizer
+                    </h2>
                 </Link>
-                <LanguageSwitcher />
-                {isSignedIn ?
-                    <>
-                        <Link to={'/dashboard'}>
-                            <Button variant="outline">{t('common.dashboard')}</Button>
-                        </Link>
-                        <Link to={'/dashboard/jobs'}>
-                            <Button variant="ghost" size="sm">📋 Jobs</Button>
-                        </Link>
-                        <Link to={'/dashboard/interviews'}>
-                            <Button variant="ghost" size="sm">🎤 Interviews</Button>
-                        </Link>
-                        <UserButton />
-                    </> :
-                    <Link to={'/auth/sign-in'}>
-                        <Button>{t('common.login')}</Button>
+
+                <nav className="hidden md:flex items-center gap-10">
+                    <Link to="/dashboard/jobs" className="text-sm font-semibold text-[#1d0f0c] dark:text-[#fcf9f8] hover:text-primary transition-colors uppercase tracking-widest">
+                        Workflow
                     </Link>
-                }
+                    <Link to="/dashboard/interviews" className="text-sm font-semibold text-[#1d0f0c] dark:text-[#fcf9f8] hover:text-primary transition-colors uppercase tracking-widest">
+                        Simulations
+                    </Link>
+                    <a href="#" className="text-sm font-semibold text-[#1d0f0c] dark:text-[#fcf9f8] hover:text-primary transition-colors uppercase tracking-widest">
+                        Pricing
+                    </a>
+                </nav>
+
+                <div className="flex items-center gap-4">
+                    <LanguageSwitcher />
+                    
+                    {isSignedIn ? (
+                        <div className="flex items-center gap-4">
+                            <Link to={'/dashboard'}>
+                                <Button className="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded font-bold uppercase tracking-widest text-xs flex items-center gap-2">
+                                    {t('common.dashboard')}
+                                </Button>
+                            </Link>
+                            <UserButton />
+                        </div>
+                    ) : (
+                        <>
+                            <Link to={'/auth/sign-in'} className="text-sm font-bold uppercase tracking-widest px-4 text-[#1d0f0c] dark:text-[#fcf9f8] hover:text-primary transition-colors">
+                                {t('common.login')}
+                            </Link>
+                            <Link to={'/auth/sign-in'}>
+                                <button className="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded font-bold uppercase tracking-widest text-xs flex items-center gap-2 transition-all hover:shadow-lg hover:shadow-primary/25">
+                                    Get Started <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                                </button>
+                            </Link>
+                        </>
+                    )}
+                </div>
             </div>
-        </div>
+        </header>
     )
 }
 

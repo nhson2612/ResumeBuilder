@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>AiCV Tracker - Pro Management Board</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#fe512a",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#121212",
+                        "card-dark": "#1e1e1e",
+                        "border-dark": "#2d2d2d"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Custom scrollbar for Kanban columns */
+        .kanban-column::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .kanban-column::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .kanban-column::-webkit-scrollbar-thumb {
+            background: #2d2d2d;
+        }
+
+        .kanban-column::-webkit-scrollbar-thumb:hover {
+            background: #fe512a;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white min-h-screen">
+    <main class="flex h-[calc(100vh-65px)]">
+        <!-- Main Content Area -->
+        <section class="flex-1 flex flex-col overflow-hidden">
+            <!-- Section Header & Actions -->
+            <div class="px-8 py-6 flex justify-between items-end border-b border-slate-200 dark:border-border-dark">
+                <div>
+                    <h1 class="text-3xl font-bold uppercase tracking-tighter text-slate-900 dark:text-white">Pro
+                        Management Board</h1>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm mt-1 uppercase tracking-widest font-medium">
+                        Developer Pipeline / Q4 2024</p>
+                </div>
+                <button
+                    class="flex items-center gap-2 bg-primary text-white px-6 py-3 font-bold uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all">
+                    <span class="material-symbols-outlined">add</span>
+                    Add New Application
+                </button>
+            </div>
+            <!-- Kanban Board Wrapper -->
+            <div class="flex-1 overflow-x-auto p-8 bg-slate-50 dark:bg-[#0a0a0a]">
+                <div class="flex gap-6 h-full min-w-[1200px]">
+                    <!-- Column: Wishlist -->
+                    <div class="flex-1 flex flex-col min-w-[280px]">
+                        <div
+                            class="bg-slate-800 dark:bg-black p-3 border-l-4 border-slate-500 flex justify-between items-center mb-4">
+                            <h3 class="text-white text-xs font-bold uppercase tracking-widest">Wishlist (4)</h3>
+                            <span class="material-symbols-outlined text-slate-500 text-sm">more_vert</span>
+                        </div>
+                        <div class="flex flex-col gap-4 kanban-column overflow-y-auto pr-2">
+                            <!-- Card 1 -->
+                            <div
+                                class="bg-white dark:bg-card-dark border border-slate-200 dark:border-border-dark p-4 group hover:border-primary transition-colors cursor-grab">
+                                <p class="text-[10px] text-primary font-bold uppercase tracking-widest mb-1">Tech Giant
+                                </p>
+                                <h4 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Google</h4>
+                                <p class="text-sm font-medium text-slate-600 dark:text-slate-300">Senior Cloud Engineer
+                                </p>
+                                <p class="text-xs text-slate-500 dark:text-slate-500 mt-3 line-clamp-2">Researching
+                                    Kubernetes infrastructure requirements and team structure.</p>
+                                <div
+                                    class="mt-4 pt-4 border-t border-slate-100 dark:border-border-dark flex justify-between items-center">
+                                    <div class="flex gap-3">
+                                        <button class="text-slate-400 hover:text-primary"><span
+                                                class="material-symbols-outlined text-sm">open_in_new</span></button>
+                                        <button class="text-slate-400 hover:text-red-500"><span
+                                                class="material-symbols-outlined text-sm">delete</span></button>
+                                    </div>
+                                    <span class="text-[10px] text-slate-400 uppercase font-bold tracking-tighter">OCT
+                                        12</span>
+                                </div>
+                            </div>
+                            <!-- Card 2 -->
+                            <div
+                                class="bg-white dark:bg-card-dark border border-slate-200 dark:border-border-dark p-4 group hover:border-primary transition-colors cursor-grab">
+                                <p class="text-[10px] text-primary font-bold uppercase tracking-widest mb-1">Startup</p>
+                                <h4 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Linear</h4>
+                                <p class="text-sm font-medium text-slate-600 dark:text-slate-300">Product Designer</p>
+                                <p class="text-xs text-slate-500 dark:text-slate-500 mt-3 line-clamp-2">High focus on
+                                    interaction design and system tooling.</p>
+                                <div
+                                    class="mt-4 pt-4 border-t border-slate-100 dark:border-border-dark flex justify-between items-center">
+                                    <div class="flex gap-3">
+                                        <button class="text-slate-400 hover:text-primary"><span
+                                                class="material-symbols-outlined text-sm">open_in_new</span></button>
+                                        <button class="text-slate-400 hover:text-red-500"><span
+                                                class="material-symbols-outlined text-sm">delete</span></button>
+                                    </div>
+                                    <span class="text-[10px] text-slate-400 uppercase font-bold tracking-tighter">OCT
+                                        14</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column: Applied -->
+                    <div class="flex-1 flex flex-col min-w-[280px]">
+                        <div
+                            class="bg-blue-900 dark:bg-[#1a2333] p-3 border-l-4 border-blue-500 flex justify-between items-center mb-4">
+                            <h3 class="text-white text-xs font-bold uppercase tracking-widest">Applied (12)</h3>
+                            <span class="material-symbols-outlined text-slate-500 text-sm">more_vert</span>
+                        </div>
+                        <div class="flex flex-col gap-4 kanban-column overflow-y-auto pr-2">
+                            <!-- Card 3 -->
+                            <div
+                                class="bg-white dark:bg-card-dark border border-slate-200 dark:border-border-dark p-4 group hover:border-primary transition-colors cursor-grab">
+                                <p class="text-[10px] text-primary font-bold uppercase tracking-widest mb-1">Fintech</p>
+                                <h4 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Stripe</h4>
+                                <p class="text-sm font-medium text-slate-600 dark:text-slate-300">Backend Dev (Rust)</p>
+                                <p class="text-xs text-slate-500 dark:text-slate-500 mt-3 line-clamp-2">Application
+                                    submitted via referral. Waiting for initial screen.</p>
+                                <div
+                                    class="mt-4 pt-4 border-t border-slate-100 dark:border-border-dark flex justify-between items-center">
+                                    <div class="flex gap-3">
+                                        <button class="text-slate-400 hover:text-primary"><span
+                                                class="material-symbols-outlined text-sm">open_in_new</span></button>
+                                        <button class="text-slate-400 hover:text-red-500"><span
+                                                class="material-symbols-outlined text-sm">delete</span></button>
+                                    </div>
+                                    <span class="text-[10px] text-slate-400 uppercase font-bold tracking-tighter">OCT
+                                        08</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column: Interview -->
+                    <div class="flex-1 flex flex-col min-w-[280px]">
+                        <div
+                            class="bg-amber-600 dark:bg-[#4d3300] p-3 border-l-4 border-amber-500 flex justify-between items-center mb-4">
+                            <h3 class="text-white text-xs font-bold uppercase tracking-widest">Interview (3)</h3>
+                            <span class="material-symbols-outlined text-slate-500 text-sm">more_vert</span>
+                        </div>
+                        <div class="flex flex-col gap-4 kanban-column overflow-y-auto pr-2">
+                            <!-- Card 4 -->
+                            <div class="bg-white dark:bg-card-dark border-2 border-primary p-4 group cursor-grab">
+                                <div class="flex justify-between items-start mb-1">
+                                    <p class="text-[10px] text-primary font-bold uppercase tracking-widest">E-commerce
+                                    </p>
+                                    <span
+                                        class="px-2 py-0.5 bg-primary text-white text-[8px] font-bold uppercase italic">Action
+                                        Needed</span>
+                                </div>
+                                <h4 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Shopify</h4>
+                                <p class="text-sm font-medium text-slate-600 dark:text-slate-300">Staff Frontend
+                                    Engineer</p>
+                                <p class="text-xs text-slate-500 dark:text-slate-500 mt-3 line-clamp-2">Technical Deep
+                                    Dive scheduled for Thursday at 2:00 PM EST.</p>
+                                <div
+                                    class="mt-4 pt-4 border-t border-slate-100 dark:border-border-dark flex justify-between items-center">
+                                    <div class="flex gap-3">
+                                        <button class="text-slate-400 hover:text-primary"><span
+                                                class="material-symbols-outlined text-sm">open_in_new</span></button>
+                                        <button class="text-slate-400 hover:text-red-500"><span
+                                                class="material-symbols-outlined text-sm">delete</span></button>
+                                    </div>
+                                    <span
+                                        class="text-[10px] text-slate-400 uppercase font-bold tracking-tighter">TOMORROW</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column: Offer -->
+                    <div class="flex-1 flex flex-col min-w-[280px]">
+                        <div
+                            class="bg-emerald-800 dark:bg-[#062e1e] p-3 border-l-4 border-emerald-500 flex justify-between items-center mb-4">
+                            <h3 class="text-white text-xs font-bold uppercase tracking-widest">Offer (1)</h3>
+                            <span class="material-symbols-outlined text-slate-500 text-sm">more_vert</span>
+                        </div>
+                        <div class="flex flex-col gap-4 kanban-column overflow-y-auto pr-2">
+                            <!-- Card 5 -->
+                            <div
+                                class="bg-white dark:bg-card-dark border border-emerald-500 p-4 group hover:border-primary transition-colors cursor-grab">
+                                <p class="text-[10px] text-emerald-500 font-bold uppercase tracking-widest mb-1">AI
+                                    Research</p>
+                                <h4 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Anthropic
+                                </h4>
+                                <p class="text-sm font-medium text-slate-600 dark:text-slate-300">UX Engineer, Tools</p>
+                                <div class="bg-emerald-500/10 border border-emerald-500/20 p-2 mt-3">
+                                    <p class="text-[10px] text-emerald-600 dark:text-emerald-400 font-bold uppercase">
+                                        Base Offer</p>
+                                    <p class="text-lg font-bold text-emerald-700 dark:text-emerald-400">$195k + Equity
+                                    </p>
+                                </div>
+                                <div
+                                    class="mt-4 pt-4 border-t border-slate-100 dark:border-border-dark flex justify-between items-center">
+                                    <div class="flex gap-3">
+                                        <button class="text-slate-400 hover:text-primary"><span
+                                                class="material-symbols-outlined text-sm">open_in_new</span></button>
+                                        <button class="text-slate-400 hover:text-red-500"><span
+                                                class="material-symbols-outlined text-sm">delete</span></button>
+                                    </div>
+                                    <span class="text-[10px] text-slate-400 uppercase font-bold tracking-tighter">OCT
+                                        15</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column: Reject -->
+                    <div class="flex-1 flex flex-col min-w-[280px]">
+                        <div
+                            class="bg-red-900 dark:bg-[#330c0c] p-3 border-l-4 border-red-500 flex justify-between items-center mb-4">
+                            <h3 class="text-white text-xs font-bold uppercase tracking-widest">Reject (8)</h3>
+                            <span class="material-symbols-outlined text-slate-500 text-sm">more_vert</span>
+                        </div>
+                        <div
+                            class="flex flex-col gap-4 kanban-column overflow-y-auto pr-2 opacity-60 hover:opacity-100 transition-opacity">
+                            <div
+                                class="bg-white dark:bg-card-dark border border-slate-200 dark:border-border-dark p-4 cursor-grab">
+                                <h4 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Meta</h4>
+                                <p class="text-sm font-medium text-slate-600 dark:text-slate-300">Solutions Architect
+                                </p>
+                                <div
+                                    class="mt-4 pt-4 border-t border-slate-100 dark:border-border-dark flex justify-between items-center">
+                                    <div class="flex gap-3">
+                                        <button class="text-slate-400"><span
+                                                class="material-symbols-outlined text-sm">delete</span></button>
+                                    </div>
+                                    <span
+                                        class="text-[10px] text-slate-400 uppercase font-bold tracking-tighter">CLOSED</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Floating Action Info (Tech Style) -->
+    <div
+        class="fixed bottom-6 right-8 bg-black border border-border-dark p-4 flex gap-6 items-center shadow-2xl hidden lg:flex">
+        <div class="flex flex-col">
+            <span class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Success Rate</span>
+            <span class="text-xl font-bold text-primary tracking-tighter">14.2%</span>
+        </div>
+        <div class="w-px h-8 bg-border-dark"></div>
+        <div class="flex flex-col">
+            <span class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Active Apps</span>
+            <span class="text-xl font-bold text-white tracking-tighter">28</span>
+        </div>
+        <div class="w-px h-8 bg-border-dark"></div>
+        <div class="flex flex-col">
+            <span class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Next Int.</span>
+            <span class="text-xl font-bold text-amber-500 tracking-tighter">18h</span>
+        </div>
+    </div>
+</body>
+
+</html>
